@@ -12,7 +12,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-green-700 text-white overflow-hidden">
+    <footer className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white overflow-hidden">
       {/* Patrón de fondo decorativo */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute -top-4 -right-4 w-32 h-32 bg-white rounded-full opacity-20"></div>
@@ -32,27 +32,27 @@ export default function Footer() {
               </div>
 
               <div className="space-y-3">
-                <p className="text-white text-sm leading-relaxed max-w-md">
+                <p className="text-blue-100 text-sm leading-relaxed max-w-md">
                   Unidad de Gestión Educativa Local de Pomabamba, comprometida
                   con la excelencia educativa y el desarrollo integral de
                   nuestra comunidad.
                 </p>
 
                 <div className="space-y-2">
-                  <div className="flex items-center gap-3 text-white ">
-                    <FaMapMarkerAlt className="text-white flex-shrink-0" />
+                  <div className="flex items-center gap-3 text-blue-200 hover:text-white transition-colors duration-200">
+                    <FaMapMarkerAlt className="text-blue-300 flex-shrink-0" />
                     <span className="text-sm">
                       Jr. Comercio N° 234, Pomabamba, Ancash
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-3 text-white transition-colors duration-200">
-                    <FaPhone className="text-white flex-shrink-0" />
+                  <div className="flex items-center gap-3 text-blue-200 hover:text-white transition-colors duration-200">
+                    <FaPhone className="text-blue-300 flex-shrink-0" />
                     <span className="text-sm">+51 996 982 234</span>
                   </div>
 
-                  <div className="flex items-center gap-3 text-white transition-colors duration-200">
-                    <FaEnvelope className="text-white flex-shrink-0" />
+                  <div className="flex items-center gap-3 text-blue-200 hover:text-white transition-colors duration-200">
+                    <FaEnvelope className="text-blue-300 flex-shrink-0" />
                     <span className="text-sm">
                       ugel.pomabamba@minedu.gob.pe
                     </span>
@@ -63,48 +63,48 @@ export default function Footer() {
 
             {/* Sección central - Enlaces rápidos */}
             <div className="lg:col-span-1 space-y-6">
-              <h3 className="text-xl font-bold text-white border-b-2 pb-2 mb-4">
+              <h3 className="text-xl font-bold text-white border-b-2 border-blue-500 pb-2 mb-4">
                 Enlaces Rápidos
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
                 <a
                   href="/noticias"
-                  className="flex items-center gap-2 text-white hover:text-white hover:translate-x-2 transition-all duration-200 group"
+                  className="flex items-center gap-2 text-blue-200 hover:text-white hover:translate-x-2 transition-all duration-200 group"
                 >
-                  <span className="w-1.5 h-1.5 bg-green-400 rounded-full group-hover:bg-white transition-colors duration-200"></span>
+                  <span className="w-1.5 h-1.5 bg-blue-400 rounded-full group-hover:bg-white transition-colors duration-200"></span>
                   <span className="text-sm">Noticias y Comunicados</span>
                 </a>
 
                 <a
                   href="/documentos"
-                  className="flex items-center gap-2 text-white hover:text-white hover:translate-x-2 transition-all duration-200 group"
+                  className="flex items-center gap-2 text-blue-200 hover:text-white hover:translate-x-2 transition-all duration-200 group"
                 >
-                  <span className="w-1.5 h-1.5 bg-green-400 rounded-full group-hover:bg-white transition-colors duration-200"></span>
+                  <span className="w-1.5 h-1.5 bg-blue-400 rounded-full group-hover:bg-white transition-colors duration-200"></span>
                   <span className="text-sm">Documentos de Gestión</span>
                 </a>
 
                 <a
                   href="/servicios"
-                  className="flex items-center gap-2 text-white hover:text-white hover:translate-x-2 transition-all duration-200 group"
+                  className="flex items-center gap-2 text-blue-200 hover:text-white hover:translate-x-2 transition-all duration-200 group"
                 >
-                  <span className="w-1.5 h-1.5 bg-green-400 rounded-full group-hover:bg-white transition-colors duration-200"></span>
+                  <span className="w-1.5 h-1.5 bg-blue-400 rounded-full group-hover:bg-white transition-colors duration-200"></span>
                   <span className="text-sm">Servicios Educativos</span>
                 </a>
 
                 <a
                   href="/mesa-de-partes"
-                  className="flex items-center gap-2 text-white hover:text-white hover:translate-x-2 transition-all duration-200 group"
+                  className="flex items-center gap-2 text-blue-200 hover:text-white hover:translate-x-2 transition-all duration-200 group"
                 >
-                  <span className="w-1.5 h-1.5 bg-green-400 rounded-full group-hover:bg-white transition-colors duration-200"></span>
+                  <span className="w-1.5 h-1.5 bg-blue-400 rounded-full group-hover:bg-white transition-colors duration-200"></span>
                   <span className="text-sm">Mesa de Partes Virtual</span>
                 </a>
 
                 <a
                   href="/transparencia"
-                  className="flex items-center gap-2 text-white hover:text-white hover:translate-x-2 transition-all duration-200 group"
+                  className="flex items-center gap-2 text-blue-200 hover:text-white hover:translate-x-2 transition-all duration-200 group"
                 >
-                  <span className="w-1.5 h-1.5 bg-green-400 rounded-full group-hover:bg-white transition-colors duration-200"></span>
+                  <span className="w-1.5 h-1.5 bg-blue-400 rounded-full group-hover:bg-white transition-colors duration-200"></span>
                   <span className="text-sm">Transparencia</span>
                 </a>
               </div>
@@ -112,12 +112,12 @@ export default function Footer() {
 
             {/* Sección derecha - Redes sociales y contacto */}
             <div className="lg:col-span-1 space-y-6">
-              <h3 className="text-xl font-bold text-white border-b-2 pb-2 mb-4">
+              <h3 className="text-xl font-bold text-white border-b-2 border-blue-500 pb-2 mb-4">
                 Síguenos
               </h3>
 
               <div className="space-y-4">
-                <p className="text-white text-sm">
+                <p className="text-blue-100 text-sm">
                   Mantente actualizado con nuestras últimas noticias y eventos
                 </p>
 
@@ -170,11 +170,11 @@ export default function Footer() {
               </div>
 
               {/* Horarios de atención */}
-              <div className="bg-green-800/50 rounded-lg p-4 border border-green-600/30">
+              <div className="bg-blue-800/50 rounded-lg p-4 border border-blue-600/30">
                 <h4 className="font-semibold text-white mb-2">
                   Horarios de Atención
                 </h4>
-                <div className="space-y-1 text-sm text-white">
+                <div className="space-y-1 text-sm text-blue-200">
                   <div className="flex justify-between">
                     <span>Lunes - Viernes:</span>
                     <span>8:00 AM - 4:30 PM</span>
@@ -193,7 +193,7 @@ export default function Footer() {
         <div className="border-t border-blue-600/30">
           <div className="container mx-auto px-6 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <div className="flex items-center gap-4 text-sm text-white">
+              <div className="flex items-center gap-4 text-sm text-blue-200">
                 <span>&copy; {currentYear} UGEL Pomabamba.</span>
                 <span className="hidden md:inline">|</span>
                 <span>Todos los derechos reservados.</span>
@@ -202,19 +202,19 @@ export default function Footer() {
               <div className="flex items-center gap-6 text-xs text-blue-300">
                 <a
                   href="/politica-privacidad"
-                  className="text-white"
+                  className="hover:text-white transition-colors duration-200"
                 >
                   Política de Privacidad
                 </a>
                 <a
                   href="/terminos-uso"
-                  className="text-white"
+                  className="hover:text-white transition-colors duration-200"
                 >
                   Términos de Uso
                 </a>
                 <a
                   href="/mapa-sitio"
-                  className="text-white"
+                  className="hover:text-white transition-colors duration-200"
                 >
                   Mapa del Sitio
                 </a>

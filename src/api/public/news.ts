@@ -4,16 +4,33 @@ import type { NewsItem } from "../../types/public/newsItem";
 import { API_URL } from "../../config";
 
 export interface PaginatedResponse {
-  data: NewsItem[];
-  total: number;
-  skip: number;
-  limit: number;
+  results: any[];
+  count: number;
+  next?: string;
+  previous?: string;
 }
 
 export const fetchNews = async (page: number, limit: number = 6) => {
-  const skip = (page - 1) * limit;
-  const response = await axios.get<PaginatedResponse>(`${API_URL}/notices/`, {
-    params: { skip, limit },
-  });
-  return response.data;
+  try {
+    const response = await axios.get<PaginatedResponse>(
+      `${API_URL}/api/v1/core/notices/`,
+      {
+        params: {
+          page: page,
+          page_size: limit,
+        },
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    return {
+      data: response.data.results || [],
+      total: response.data.count || 0,
+    };
+  } catch (error) {
+    console.error("Error fetching news:", error);
+    throw error;
+  }
 };
