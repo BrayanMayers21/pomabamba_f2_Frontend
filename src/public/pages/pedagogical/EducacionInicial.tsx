@@ -134,4 +134,5 @@ const EducacionInicial = () => {
   );
 };
 
+
 export default EducacionInicial;

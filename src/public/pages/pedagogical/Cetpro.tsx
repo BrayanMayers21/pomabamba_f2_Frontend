@@ -46,6 +46,23 @@ const generalFunctions = [
   "Desarrollar actividades extracurriculares que promueven el mejoramiento de la calidad educativa y la participación de los agentes de la educación.",
 ];
 
+// const Cetpro = () => {
+//     return (
+//         <div className="bg-gray-100 min-h-screen px-4 py-8">
+//             <div className="container mx-auto">
+//                 {/* Título y breadcrumb */}
+//                 <div>
+//                     <h1 className="text-3xl font-semibold text-gray-800">CETPRO</h1>
+//                 </div>
+//                 <hr className="border-gray-400 my-4"></hr>
+//                 <h3 className="text-gray-700 font-semibold mb-4 uppercase">Art.11º.- Son funciones del EN EDUCACIÓN BÁSICA ALTERNATIVA Y EDUCACIÓN TÉCNICO PRODUCTIVA Y CETPROS:</h3>
+//                 <NumberedList items={generalFunctions} />
+//             </div>
+//         </div>
+//     );
+// };
+
+
 const Cetpro = () => {
   const [activeTab] = useState("funciones");
 

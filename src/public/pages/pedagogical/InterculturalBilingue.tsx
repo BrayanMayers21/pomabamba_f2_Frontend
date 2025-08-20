@@ -115,6 +115,7 @@ const InterculturalBilingue = () => {
                       </a>
                     </div>
                   </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -127,5 +128,6 @@ const InterculturalBilingue = () => {
     </div>
   );
 };
+
 
 export default InterculturalBilingue;

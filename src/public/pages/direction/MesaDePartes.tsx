@@ -13,16 +13,16 @@ const MesaDePartes = () => {
                 <div className="container mx-auto relative z-10">
                     <div className="flex items-center space-x-4 mb-4">
                         <FileText className="w-12 h-12 text-white/90" />
-                        <h1 className="text-5xl font-bold tracking-tight">Mesa de Partes</h1>
+                        <h1 className="text-4xl font-bold tracking-tight">Mesa de Partes</h1>
                     </div>
                     <div className="w-24 h-1 bg-gradient-to-r from-yellow-300 to-orange-300 rounded-full"></div>
                 </div>
             </div>
 
             <div className="container mx-auto px-4 -mt-8 relative z-20">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {/* Contenido Principal */}
-                    <div className="lg:col-span-1">
+                    <div className="lg:col-span-2">
                         {/* Tarjeta de Comunicado */}
                         <div className="bg-white rounded-2xl shadow-xl shadow-blue-100/50 p-8 mb-8 border border-blue-100/20 backdrop-blur-sm">
                             <div className="flex items-center space-x-3 mb-6">

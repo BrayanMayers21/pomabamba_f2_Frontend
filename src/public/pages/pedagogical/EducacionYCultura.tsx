@@ -117,6 +117,7 @@ const EducacionYCultura = () => {
                       </a>
                     </div>
                   </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -129,5 +130,6 @@ const EducacionYCultura = () => {
     </div>
   );
 };
+
 
 export default EducacionYCultura;

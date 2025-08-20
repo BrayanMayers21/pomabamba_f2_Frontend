@@ -35,7 +35,7 @@ const JefaturaDeAsesoria = () => {
                     <div className="flex items-center space-x-4 mb-4">
                         <Scale className="w-12 h-12 text-white/90" />
                         <div>
-                            <h1 className="text-4xl lg:text-5xl font-bold tracking-tight">Jefatura de Asesoría</h1>
+                            <h1 className="text-3xl lg:text-4xl font-bold tracking-tight">Jefatura de Asesoría</h1>
                             <p className="text-xl text-white/80 mt-2">Jurídica</p>
                         </div>
                     </div>
