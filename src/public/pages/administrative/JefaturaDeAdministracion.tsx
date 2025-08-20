@@ -57,7 +57,7 @@ const areaFunctions: string[] = [
 
 const JefaturaDeAdministracion = () => {
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-emerald-50 to-teal-50 min-h-screen mt-20">
+    <div className="bg-gradient-to-br from-slate-50 via-emerald-50 to-teal-50 min-h-screen">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-emerald-600 via-teal-600 to-green-600 text-white py-16 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
@@ -68,10 +68,9 @@ const JefaturaDeAdministracion = () => {
           <div className="flex items-center space-x-4 mb-4">
             <Settings className="w-12 h-12 text-white/90" />
             <div>
-              <h1 className="text-4xl lg:text-5xl font-bold tracking-tight">
+              <h1 className="text-4xl lg:text-4xl font-bold tracking-tight">
                 Jefatura de Administración
               </h1>
-              {/* <p className="text-xl text-white/80 mt-2">Administración</p> */}
             </div>
           </div>
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-300 to-orange-300 rounded-full"></div>
@@ -79,9 +78,9 @@ const JefaturaDeAdministracion = () => {
       </div>
 
       <div className="container mx-auto px-4 -mt-8 relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contenido Principal */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-2">
             {/* Marco Legal - Funciones Generales */}
             <div className="bg-white rounded-2xl shadow-xl shadow-emerald-100/50 p-8 mb-8 border border-emerald-100/20 backdrop-blur-sm">
               <div className="flex items-center space-x-3 mb-6">
