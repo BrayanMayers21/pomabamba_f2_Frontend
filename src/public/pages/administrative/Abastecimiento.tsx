@@ -23,23 +23,28 @@ const generalFunctions: string[] = [
   "Formular la documentación para el cierre de cuentas del semestre y de fin de año.",
   "Realizar las fases del compromiso, devengado y girado de las órdenes de compra de servicio y planilla de viáticos.",
   "Verificar los saldos existentes por programas, realizar el trámite de anulaciones y nuevos girados de cheques y apoyar en el ingreso en las tres fases del registro en cuanto al ingreso de remuneraciones y pensiones.",
-  "Realizar otras funciones afines al cargo."
+  "Realizar otras funciones afines al cargo.",
 ];
 
 const Abastecimiento = () => {
-    return (
-        <div className="bg-gray-100 min-h-screen px-4 py-8">
-            <div className="container mx-auto">
-                {/* Título y breadcrumb */}
-                <div>
-                    <h1 className="text-3xl font-semibold text-gray-800">Abastecimiento</h1>
-                </div>
-                <hr className="border-gray-400 my-4"></hr>
-                <h3 className="text-gray-700 font-semibold mb-4 uppercase">Art.35º.- Son funciones del ESPECIALISTA ADMINISTRATIVO I - ABASTECIMIENTOS</h3>
-                <NumberedList items={generalFunctions} />
-            </div>
+  return (
+    <div className="bg-gray-100 min-h-screen px-4 py-8 mt-20">
+      <div className="container mx-auto">
+        {/* Título y breadcrumb */}
+        <div>
+          <h1 className="text-3xl font-semibold text-gray-800">
+            Abastecimiento
+          </h1>
         </div>
-    );
+        <hr className="border-gray-400 my-4"></hr>
+        <h3 className="text-gray-700 font-semibold mb-4 uppercase">
+          Art.35º.- Son funciones del ESPECIALISTA ADMINISTRATIVO I -
+          ABASTECIMIENTOS
+        </h3>
+        <NumberedList items={generalFunctions} />
+      </div>
+    </div>
+  );
 };
 
 export default Abastecimiento;

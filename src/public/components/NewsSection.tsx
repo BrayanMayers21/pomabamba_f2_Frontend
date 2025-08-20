@@ -334,7 +334,7 @@ const NewsSection: React.FC = () => {
   }
 
   return (
-    <section className="bg-gradient-to-br  py-8 px-4">
+    <section className="bg-gradient-to-br  py-8 px-4 ">
       <div className="container mx-auto max-w-7xl  ">
         <div className="text-center mb-4 ">
           <div className="flex items-end justify-between border-green-700 border-l-4 px-2 ">
@@ -350,7 +350,6 @@ const NewsSection: React.FC = () => {
               Actualizar
             </button>
           </div>
-          
         </div>
 
         <div className="relative">

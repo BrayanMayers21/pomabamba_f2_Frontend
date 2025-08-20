@@ -15,24 +15,27 @@ const generalFunctions: string[] = [
   "Coordinar con los Directores de las II.EE. en asuntos relacionados con normas de personal.",
   "Analizar expedientes, proyectar resoluciones y emitir informes técnicos sobre nombramientos, contratos, reasignaciones, licencias, modificaciones y otros.",
   "Formular y mantener actualizado el CAP de la sede y de las II.EE. a su cargo, así como el cuadro de plazas vacantes.",
-  "Realizar las demás funciones afines al cargo."
+  "Realizar las demás funciones afines al cargo.",
 ];
 
-
 const JefaturaDePersonal = () => {
-    return (
-        <div className="bg-gray-100 min-h-screen px-4 py-8">
-            <div className="container mx-auto">
-                {/* Título y breadcrumb */}
-                <div>
-                    <h1 className="text-3xl font-semibold text-gray-800">Jefatura de Personal</h1>
-                </div>
-                <hr className="border-gray-400 my-4"></hr>
-                <h3 className="text-gray-700 font-semibold mb-4 uppercase">Art.37º.- Son funciones del ESPECIALISTA ADMINISTRATIVO I - PERSONAL</h3>
-                <NumberedList items={generalFunctions} />
-            </div>
+  return (
+    <div className="bg-gray-100 min-h-screen px-4 py-8 mt-20">
+      <div className="container mx-auto">
+        {/* Título y breadcrumb */}
+        <div>
+          <h1 className="text-3xl font-semibold text-gray-800">
+            Jefatura de Personal
+          </h1>
         </div>
-    );
+        <hr className="border-gray-400 my-4"></hr>
+        <h3 className="text-gray-700 font-semibold mb-4 uppercase">
+          Art.37º.- Son funciones del ESPECIALISTA ADMINISTRATIVO I - PERSONAL
+        </h3>
+        <NumberedList items={generalFunctions} />
+      </div>
+    </div>
+  );
 };
 
 export default JefaturaDePersonal;

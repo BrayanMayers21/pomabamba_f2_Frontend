@@ -16,23 +16,27 @@ const racionalizacionFunctions: string[] = [
   "Orientar la organización y llevar el control de las APAFAs de las instituciones educativas.",
   "Elaborar el flujograma de trámite documentario.",
   "Proyectar resoluciones de creación, fusión o supresión de instituciones educativas, de racionalización de plazas y nominación de institución educativa.",
-  "Realizar otras funciones inherentes a su cargo."
+  "Realizar otras funciones inherentes a su cargo.",
 ];
 
 const Racionalizacion = () => {
-    return (
-        <div className="bg-gray-100 min-h-screen px-4 py-8">
-            <div className="container mx-auto">
-                {/* Título y breadcrumb */}
-                <div>
-                    <h1 className="text-3xl font-semibold text-gray-800">Racionalización</h1>
-                </div>
-                <hr className="border-gray-400 my-4"></hr>
-                <h3 className="text-gray-700 font-semibold mb-4 uppercase">Art.20º.- Son funciones del ESPECIALISTA EN RACIONALIZACIÓN I:</h3>
-                <NumberedList items={racionalizacionFunctions} />
-            </div>
+  return (
+    <div className="bg-gray-100 min-h-screen px-4 py-8 mt-20">
+      <div className="container mx-auto">
+        {/* Título y breadcrumb */}
+        <div>
+          <h1 className="text-3xl font-semibold text-gray-800">
+            Racionalización
+          </h1>
         </div>
-    );
+        <hr className="border-gray-400 my-4"></hr>
+        <h3 className="text-gray-700 font-semibold mb-4 uppercase">
+          Art.20º.- Son funciones del ESPECIALISTA EN RACIONALIZACIÓN I:
+        </h3>
+        <NumberedList items={racionalizacionFunctions} />
+      </div>
+    </div>
+  );
 };
 
 export default Racionalizacion;

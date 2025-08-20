@@ -12,7 +12,7 @@ const gestionPedagogicaFunctions: string[] = [
   "Promover, apoyar y supervisar la educación ofertada por las II.EE. privadas.",
   "Promover y desarrollar programas de capacitación, actualización y perfeccionamiento docente, y desarrollar ferias escolares de ciencias, coordinando con las comisiones consultivas departamentales del Consejo Nacional de Ciencia y Tecnología (CONCYTEC).",
   "Promover, coordinar, ejecutar, supervisar y evaluar los programas de educación ocupacional y otros.",
-  "Proponer y promover la participación activa de instituciones educativas públicas y privadas en las acciones educativas, estableciendo convenios con programas de carácter multisectorial."
+  "Proponer y promover la participación activa de instituciones educativas públicas y privadas en las acciones educativas, estableciendo convenios con programas de carácter multisectorial.",
 ];
 
 const gestionCurricularFunctions: string[] = [
@@ -31,13 +31,12 @@ const gestionCurricularFunctions: string[] = [
   "Promover la participación de la comunidad en la gestión y administración educativa.",
   "Coordinar la supervisión de los centros y/o programas de obtención de becas y créditos educativos administrados por el INABEC.",
   "Motivar y orientar la ejecución de actividades productivas en la comunidad a través de las II.EE.",
-  "Cumplir las demás funciones que le asigne el Director."
+  "Cumplir las demás funciones que le asigne el Director.",
 ];
-
 
 const JefaturaAgp = () => {
   return (
-    <div className="bg-gray-100 min-h-screen px-4 py-8">
+    <div className="bg-gray-100 min-h-screen px-4 py-8 mt-20">
       <div className="container mx-auto">
         {/* Título y breadcrumb */}
         <div>
@@ -47,18 +46,31 @@ const JefaturaAgp = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           {/* Texto a la izquierda */}
           <div>
-            <h3 className="text-gray-700 font-semibold mb-4 uppercase">Art.7º.- FUNCIONES GENERALES DEL ÁREA:</h3>
-            <NumberedList items={gestionPedagogicaFunctions}/>
-            <h3 className="text-gray-700 font-semibold mt-10 mb-4 uppercase">Art.8º.- Son funciones del Jefe del Área de Gestión Pedagógica:</h3>
-            <NumberedList items={gestionCurricularFunctions}/>
+            <h3 className="text-gray-700 font-semibold mb-4 uppercase">
+              Art.7º.- FUNCIONES GENERALES DEL ÁREA:
+            </h3>
+            <NumberedList items={gestionPedagogicaFunctions} />
+            <h3 className="text-gray-700 font-semibold mt-10 mb-4 uppercase">
+              Art.8º.- Son funciones del Jefe del Área de Gestión Pedagógica:
+            </h3>
+            <NumberedList items={gestionCurricularFunctions} />
           </div>
 
           {/* Imagen a la derecha */}
           <div>
             <div className="bg-white p-6 rounded-md shadow-md text-center">
-                <h6 className="text-2xl text-green-700 font-semibold">CONTACTO</h6>
-                <p className="text-gray-600 font-bold mt-4">Prof. LEÓN TREJO ALEX SILVIOTRA</p>
-                <a href="mailto:aleon@ugelpomabamba.gob.pe" className="text-sm underline text-green-600">aleon@ugelpomabamba.gob.pe</a>
+              <h6 className="text-2xl text-green-700 font-semibold">
+                CONTACTO
+              </h6>
+              <p className="text-gray-600 font-bold mt-4">
+                Prof. LEÓN TREJO ALEX SILVIOTRA
+              </p>
+              <a
+                href="mailto:aleon@ugelpomabamba.gob.pe"
+                className="text-sm underline text-green-600"
+              >
+                aleon@ugelpomabamba.gob.pe
+              </a>
             </div>
           </div>
         </div>

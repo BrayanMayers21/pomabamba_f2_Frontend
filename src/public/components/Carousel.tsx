@@ -111,7 +111,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
   const currentItem = items[currentIndex];
 
   return (
-    <div className="relative w-full mx-auto bg-white shadow-2xl overflow-hidden border border-gray-100">
+    <div className="relative w-full mx-auto bg-white shadow-2xl overflow-hidden border border-gray-100 ">
       {/* Font Awesome CDN */}
       <link
         rel="stylesheet"
@@ -519,7 +519,7 @@ const Carousel: React.FC = () => {
   }
 
   return (
-    <div className="container mx-auto   ">
+    <div className="container mx-auto mt-20  ">
       <ImageCarousel
         items={carouselItems}
         autoPlay={true}

@@ -9,25 +9,28 @@ const communicationFunctions: string[] = [
   "Coordina en preparar medios de comunicación, tales como ediciones radiofónicas, el periódico mural, boletín interno y otros.",
   "Promover e implementar el intercambio de información con dependencias públicas.",
   "Organizar y supervisar campañas oficiales de difusión.",
-  "Realizar las demás funciones delegadas por el Director."
+  "Realizar las demás funciones delegadas por el Director.",
 ];
 
-
 const RelacionistaPublico = () => {
-    return (
-        <div className="bg-gray-100 min-h-screen px-4 py-8">
-            <div className="container mx-auto">
-                {/* Título y breadcrumb */}
-                <div>
-                    <h1 className="text-3xl font-semibold text-gray-800">Relacionista Público</h1>
-                </div>
-                <hr className="border-gray-400 my-4"></hr>
-
-                <h3 className="text-gray-700 font-semibold mb-4 uppercase">Art.4º.- Son funciones del Relacionista Público I</h3>
-                <NumberedList items={communicationFunctions} />
-            </div>
+  return (
+    <div className="bg-gray-100 min-h-screen px-4 py-8 mt-20">
+      <div className="container mx-auto">
+        {/* Título y breadcrumb */}
+        <div>
+          <h1 className="text-3xl font-semibold text-gray-800">
+            Relacionista Público
+          </h1>
         </div>
-    );
+        <hr className="border-gray-400 my-4"></hr>
+
+        <h3 className="text-gray-700 font-semibold mb-4 uppercase">
+          Art.4º.- Son funciones del Relacionista Público I
+        </h3>
+        <NumberedList items={communicationFunctions} />
+      </div>
+    </div>
+  );
 };
 
 export default RelacionistaPublico;

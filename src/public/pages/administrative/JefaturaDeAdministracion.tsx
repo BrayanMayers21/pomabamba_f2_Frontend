@@ -1,4 +1,14 @@
-import { Settings, Users, Mail, User, FileText, DollarSign, Briefcase, CheckCircle, ClipboardList } from 'lucide-react';
+import {
+  Settings,
+  Users,
+  Mail,
+  User,
+  FileText,
+  DollarSign,
+  Briefcase,
+  CheckCircle,
+  ClipboardList,
+} from "lucide-react";
 
 import NumberedList from "../../components/NumberedList";
 
@@ -17,7 +27,7 @@ const generalFunctions: string[] = [
   "Realizar el registro del SIAF, de la ejecución presupuestal.",
   "Brindar apoyo técnico en asuntos relacionados al sistema informático.",
   "Planificar el equipamiento y sistema informático.",
-  "Implementar los sistemas de información que requiere la gestión."
+  "Implementar los sistemas de información que requiere la gestión.",
 ];
 
 const areaFunctions: string[] = [
@@ -42,25 +52,26 @@ const areaFunctions: string[] = [
   "Llevar la información actualizada de plazas vacantes de las instituciones educativas por niveles, modalidades y turnos.",
   "Revisar y firmar los informes periódicos sobre control de asistencia y puntualidad del personal de la sede.",
   "Adecuar, orientar, coordinar y supervisar el cumplimiento de las normas y procedimientos de los sistemas a su cargo.",
-  "Realizar las demás funciones afines al cargo que asigne el Director."
+  "Realizar las demás funciones afines al cargo que asigne el Director.",
 ];
-
 
 const JefaturaDeAdministracion = () => {
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-emerald-50 to-teal-50 min-h-screen">
+    <div className="bg-gradient-to-br from-slate-50 via-emerald-50 to-teal-50 min-h-screen mt-20">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-emerald-600 via-teal-600 to-green-600 text-white py-16 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -translate-y-48 translate-x-48"></div>
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-white/5 rounded-full translate-y-36 -translate-x-36"></div>
-        
+
         <div className="container mx-auto relative z-10">
           <div className="flex items-center space-x-4 mb-4">
             <Settings className="w-12 h-12 text-white/90" />
             <div>
-              <h1 className="text-4xl lg:text-5xl font-bold tracking-tight">Jefatura de</h1>
-              <p className="text-xl text-white/80 mt-2">Administración</p>
+              <h1 className="text-4xl lg:text-5xl font-bold tracking-tight">
+                Jefatura de Administración
+              </h1>
+              {/* <p className="text-xl text-white/80 mt-2">Administración</p> */}
             </div>
           </div>
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-300 to-orange-300 rounded-full"></div>
@@ -79,16 +90,20 @@ const JefaturaDeAdministracion = () => {
                   FUNCIONES GENERALES
                 </h2>
               </div>
-              
+
               {/* Artículo Legal */}
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-400 p-6 rounded-xl mb-6">
                 <div className="flex items-start space-x-3">
                   <FileText className="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h3 className="font-semibold text-emerald-800 mb-2">Artículo 29º</h3>
+                    <h3 className="font-semibold text-emerald-800 mb-2">
+                      Artículo 29º
+                    </h3>
                     <p className="text-gray-700 text-sm leading-relaxed text-justify">
-                      El órgano de apoyo es responsable de la Administración y desarrollo del potencial humano, y de la 
-                      administración financiera, así como de los bienes y servicios de la UGEL, y desempeña las siguientes funciones:
+                      El órgano de apoyo es responsable de la Administración y
+                      desarrollo del potencial humano, y de la administración
+                      financiera, así como de los bienes y servicios de la UGEL,
+                      y desempeña las siguientes funciones:
                     </p>
                   </div>
                 </div>
@@ -108,14 +123,15 @@ const JefaturaDeAdministracion = () => {
                   <span>Funciones del Jefe del Área</span>
                 </h3>
               </div>
-              
+
               {/* Artículo Legal */}
               <div className="bg-gradient-to-r from-teal-50 to-green-50 border-l-4 border-teal-400 p-4 rounded-lg mb-6">
                 <p className="text-sm text-gray-700 leading-relaxed text-justify">
-                  <strong>Art.30º.-</strong> Son funciones del Jefe del Área de Administración:
+                  <strong>Art.30º.-</strong> Son funciones del Jefe del Área de
+                  Administración:
                 </p>
               </div>
-              
+
               <div className="bg-gradient-to-br from-teal-50 to-green-50 rounded-xl p-6 border border-teal-100">
                 <NumberedList items={areaFunctions} />
               </div>
@@ -136,10 +152,12 @@ const JefaturaDeAdministracion = () => {
                         <Mail className="w-8 h-8 text-white" />
                       </div>
                     </div>
-                    <h6 className="text-2xl font-bold text-center tracking-wide">CONTACTO</h6>
+                    <h6 className="text-2xl font-bold text-center tracking-wide">
+                      CONTACTO
+                    </h6>
                   </div>
                 </div>
-                
+
                 <div className="p-6 space-y-6">
                   <div className="text-center space-y-4">
                     <div className="flex items-center justify-center">
@@ -147,7 +165,7 @@ const JefaturaDeAdministracion = () => {
                         <User className="w-10 h-10 text-emerald-600" />
                       </div>
                     </div>
-                    
+
                     <div>
                       <p className="text-lg font-bold text-gray-800 mb-1">
                         Mag. HUAMAN REYES LIDSAY KATTY
@@ -155,12 +173,12 @@ const JefaturaDeAdministracion = () => {
                       <div className="w-16 h-0.5 bg-gradient-to-r from-emerald-400 to-teal-400 mx-auto"></div>
                     </div>
                   </div>
-                  
+
                   <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-4 border border-emerald-100">
                     <div className="flex items-center justify-center space-x-2">
                       <Mail className="w-5 h-5 text-emerald-600" />
-                      <a 
-                        href="mailto:lhuaman@ugelpomabamba.gob.pe" 
+                      <a
+                        href="mailto:lhuaman@ugelpomabamba.gob.pe"
                         className="text-emerald-700 font-semibold hover:text-emerald-800 transition-colors duration-200 hover:underline"
                       >
                         lhuaman@ugelpomabamba.gob.pe
@@ -174,9 +192,11 @@ const JefaturaDeAdministracion = () => {
               <div className="bg-white rounded-2xl shadow-xl shadow-teal-100/50 p-6 border border-teal-100/20 backdrop-blur-sm">
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="w-3 h-6 bg-gradient-to-b from-teal-500 to-green-600 rounded-full"></div>
-                  <h3 className="text-xl font-bold text-gray-800">Áreas de Responsabilidad</h3>
+                  <h3 className="text-xl font-bold text-gray-800">
+                    Áreas de Responsabilidad
+                  </h3>
                 </div>
-                
+
                 <div className="space-y-4">
                   {/* Presupuesto y Finanzas */}
                   <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg p-4 border border-emerald-200">
@@ -185,8 +205,12 @@ const JefaturaDeAdministracion = () => {
                         <DollarSign className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-800">Presupuesto y Finanzas</h4>
-                        <p className="text-sm text-gray-600">Ejecución presupuestal y contabilidad</p>
+                        <h4 className="font-semibold text-gray-800">
+                          Presupuesto y Finanzas
+                        </h4>
+                        <p className="text-sm text-gray-600">
+                          Ejecución presupuestal y contabilidad
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -198,8 +222,12 @@ const JefaturaDeAdministracion = () => {
                         <Users className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-800">Recursos Humanos</h4>
-                        <p className="text-sm text-gray-600">Gestión del personal docente y administrativo</p>
+                        <h4 className="font-semibold text-gray-800">
+                          Recursos Humanos
+                        </h4>
+                        <p className="text-sm text-gray-600">
+                          Gestión del personal docente y administrativo
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -211,8 +239,12 @@ const JefaturaDeAdministracion = () => {
                         <ClipboardList className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-800">Logística y Bienes</h4>
-                        <p className="text-sm text-gray-600">Adquisiciones e inventarios</p>
+                        <h4 className="font-semibold text-gray-800">
+                          Logística y Bienes
+                        </h4>
+                        <p className="text-sm text-gray-600">
+                          Adquisiciones e inventarios
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -225,7 +257,8 @@ const JefaturaDeAdministracion = () => {
                       <CheckCircle className="w-4 h-4 text-white" />
                     </div>
                     <p className="text-sm text-gray-700 leading-relaxed">
-                      Gestión administrativa integral para el funcionamiento eficiente de la UGEL.
+                      Gestión administrativa integral para el funcionamiento
+                      eficiente de la UGEL.
                     </p>
                   </div>
                 </div>
@@ -233,7 +266,7 @@ const JefaturaDeAdministracion = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Espaciado inferior */}
         <div className="py-12"></div>
       </div>

@@ -17,23 +17,25 @@ const generalFunctions: string[] = [
   "Llenar el libro bancos.",
   "Efectuar la fase de girado de cheques girados al SIAF.",
   "Reportar cheques en cartera a contabilidad.",
-  "Realizar las demás funciones afines al cargo."
+  "Realizar las demás funciones afines al cargo.",
 ];
 
 const Tesoreria = () => {
-    return (
-        <div className="bg-gray-100 min-h-screen px-4 py-8">
-            <div className="container mx-auto">
-                {/* Título y breadcrumb */}
-                <div>
-                    <h1 className="text-3xl font-semibold text-gray-800">Tesorería</h1>
-                </div>
-                <hr className="border-gray-400 my-4"></hr>
-                <h3 className="text-gray-700 font-semibold mb-4 uppercase">Art.32º.- Son funciones del TESORERO I</h3>
-                <NumberedList items={generalFunctions} />
-            </div>
+  return (
+    <div className="bg-gray-100 min-h-screen px-4 py-8 mt-20">
+      <div className="container mx-auto">
+        {/* Título y breadcrumb */}
+        <div>
+          <h1 className="text-3xl font-semibold text-gray-800">Tesorería</h1>
         </div>
-    );
+        <hr className="border-gray-400 my-4"></hr>
+        <h3 className="text-gray-700 font-semibold mb-4 uppercase">
+          Art.32º.- Son funciones del TESORERO I
+        </h3>
+        <NumberedList items={generalFunctions} />
+      </div>
+    </div>
+  );
 };
 
 export default Tesoreria;

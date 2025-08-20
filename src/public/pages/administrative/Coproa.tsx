@@ -17,24 +17,25 @@ const docenteFunctions: string[] = [
   "Basar sus actividades profesionales en el respeto mutuo, derechos humanos, la Constitución del Perú, solidaridad, tolerancia y cultura de paz y democracia.",
   "Coadyuvar al trabajo en equipo con docentes de la institución y, si aplica, de las instancias de gestión educativa descentralizada.",
   "Participar en los sistemas tutoriales implementados por la institución educativa.",
-  "Cumplir con otros deberes establecidos por la presente ley u otras normas específicas de la materia."
+  "Cumplir con otros deberes establecidos por la presente ley u otras normas específicas de la materia.",
 ];
 
-
 const Coproa = () => {
-    return (
-        <div className="bg-gray-100 min-h-screen px-4 py-8">
-            <div className="container mx-auto">
-                {/* Título y breadcrumb */}
-                <div>
-                    <h1 className="text-3xl font-semibold text-gray-800">COPROA</h1>
-                </div>
-                <hr className="border-gray-400 my-4"></hr>
-                <h3 className="text-gray-700 font-semibold mb-4 uppercase">Son funciones de los Docentes:</h3>
-                <NumberedList items={docenteFunctions} />
-            </div>
+  return (
+    <div className="bg-gray-100 min-h-screen px-4 py-8 mt-20">
+      <div className="container mx-auto">
+        {/* Título y breadcrumb */}
+        <div>
+          <h1 className="text-3xl font-semibold text-gray-800">COPROA</h1>
         </div>
-    );
+        <hr className="border-gray-400 my-4"></hr>
+        <h3 className="text-gray-700 font-semibold mb-4 uppercase">
+          Son funciones de los Docentes:
+        </h3>
+        <NumberedList items={docenteFunctions} />
+      </div>
+    </div>
+  );
 };
 
 export default Coproa;

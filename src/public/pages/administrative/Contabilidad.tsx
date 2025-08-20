@@ -1,5 +1,5 @@
-import React from 'react';
-import NumberedList from '../../components/NumberedList';
+import React from "react";
+import NumberedList from "../../components/NumberedList";
 
 const generalFunctions: string[] = [
   "Elaborar y formular las notas de contabilidad en el Sistema Integrado de Administración Financiera del Sector Público (SIAF-SP).",
@@ -19,40 +19,42 @@ const generalFunctions: string[] = [
   "Elaborar el balance de comprobación de estados financieros en el SIAF-SP.",
   "Realizar fiscalización previa de las órdenes de compra y de servicios de la Unidad Ejecutora y Unidad Operativa.",
   "Revisar y firmar las conciliaciones de cuentas de enlace, en coordinación con el tesorero.",
-  "Realizar las demás funciones afines al cargo."
+  "Realizar las demás funciones afines al cargo.",
 ];
 
 const Contabilidad: React.FC = () => {
-    // Dividir las funciones en dos mitades
-    const midPoint = Math.ceil(generalFunctions.length / 2);
-    const firstHalf = generalFunctions.slice(0, midPoint);
-    const secondHalf = generalFunctions.slice(midPoint);
+  // Dividir las funciones en dos mitades
+  const midPoint = Math.ceil(generalFunctions.length / 2);
+  const firstHalf = generalFunctions.slice(0, midPoint);
+  const secondHalf = generalFunctions.slice(midPoint);
 
-    return (
-        <div className="bg-gray-100 min-h-screen px-4 py-8">
-            <div className="container mx-auto">
-                {/* Título y breadcrumb */}
-                <div>
-                    <h1 className="text-3xl font-semibold text-gray-800">Contabilidad</h1>
-                </div>
-                <hr className="border-gray-400 my-4" />
-                <h3 className="text-gray-700 font-semibold mb-4 uppercase">Art.31º.- Son funciones del CONTADOR I</h3>
-                
-                {/* Layout responsivo: 1 columna en móvil, 2 columnas en pantallas grandes */}
-                <div className="lg:grid lg:grid-cols-2 lg:gap-8">
-                    {/* Primera columna */}
-                    <div className="mb-8 lg:mb-0">
-                        <NumberedList items={firstHalf} />
-                    </div>
-                    
-                    {/* Segunda columna */}
-                    <div>
-                        <NumberedList items={secondHalf} startIndex={midPoint} />
-                    </div>
-                </div>
-            </div>
+  return (
+    <div className="bg-gray-100 min-h-screen px-4 py-8 mt-20">
+      <div className="container mx-auto">
+        {/* Título y breadcrumb */}
+        <div>
+          <h1 className="text-3xl font-semibold text-gray-800">Contabilidad</h1>
         </div>
-    );
+        <hr className="border-gray-400 my-4" />
+        <h3 className="text-gray-700 font-semibold mb-4 uppercase">
+          Art.31º.- Son funciones del CONTADOR I
+        </h3>
+
+        {/* Layout responsivo: 1 columna en móvil, 2 columnas en pantallas grandes */}
+        <div className="lg:grid lg:grid-cols-2 lg:gap-8">
+          {/* Primera columna */}
+          <div className="mb-8 lg:mb-0">
+            <NumberedList items={firstHalf} />
+          </div>
+
+          {/* Segunda columna */}
+          <div>
+            <NumberedList items={secondHalf} startIndex={midPoint} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Contabilidad;

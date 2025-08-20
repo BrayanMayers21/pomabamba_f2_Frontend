@@ -17,23 +17,27 @@ const accionesPedagogicasFunctions: string[] = [
   "Difundir y hacer cumplir las directivas emanadas de la superioridad.",
   "Evaluar los aprendizajes de los estudiantes mediante concursos y otras estrategias.",
   "Participar en el control de asistencia del personal docente y administrativo de las II.EE. durante las acciones de supervisión o monitoreo.",
-  "Realizar otras acciones delegadas por el jefe."
+  "Realizar otras acciones delegadas por el jefe.",
 ];
 
 const EducacionSecundaria = () => {
-    return (
-        <div className="bg-gray-100 min-h-screen px-4 py-8">
-            <div className="container mx-auto">
-                {/* Título y breadcrumb */}
-                <div>
-                    <h1 className="text-3xl font-semibold text-gray-800">Educación secundaria</h1>
-                </div>
-                <hr className="border-gray-400 my-4"></hr>
-                <h3 className="text-gray-700 font-semibold mb-4 uppercase">Art.9º.- Son funciones del ESPECIALISTA EN EDUCACIÓN SECUNDARIA:</h3>
-                <NumberedList items={accionesPedagogicasFunctions} />
-            </div>
+  return (
+    <div className="bg-gray-100 min-h-screen px-4 py-8 mt-20">
+      <div className="container mx-auto">
+        {/* Título y breadcrumb */}
+        <div>
+          <h1 className="text-3xl font-semibold text-gray-800">
+            Educación secundaria
+          </h1>
         </div>
-    );
+        <hr className="border-gray-400 my-4"></hr>
+        <h3 className="text-gray-700 font-semibold mb-4 uppercase">
+          Art.9º.- Son funciones del ESPECIALISTA EN EDUCACIÓN SECUNDARIA:
+        </h3>
+        <NumberedList items={accionesPedagogicasFunctions} />
+      </div>
+    </div>
+  );
 };
 
 export default EducacionSecundaria;

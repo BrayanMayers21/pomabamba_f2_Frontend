@@ -11,24 +11,25 @@ const estadisticaFunctions: string[] = [
   "Difundir la estadística de la UGEL-P.",
   "Participar en la elaboración y evaluación de las metas educacionales y preparar informes técnicos de estadística.",
   "Participar en la elaboración y evaluación del Plan Operativo Institucional.",
-  "Realizar las demás funciones que se le asigne."
+  "Realizar las demás funciones que se le asigne.",
 ];
 
-
 const Estadistica = () => {
-    return (
-        <div className="bg-gray-100 min-h-screen px-4 py-8">
-            <div className="container mx-auto">
-                {/* Título y breadcrumb */}
-                <div>
-                    <h1 className="text-3xl font-semibold text-gray-800">Estadística</h1>
-                </div>
-                <hr className="border-gray-400 my-4"></hr>
-                <h3 className="text-gray-700 font-semibold mb-4 uppercase">Art.23º.- Son funciones del ESTADÍSTICO:</h3>
-                <NumberedList items={estadisticaFunctions} />
-            </div>
+  return (
+    <div className="bg-gray-100 min-h-screen px-4 py-8 mt-20">
+      <div className="container mx-auto">
+        {/* Título y breadcrumb */}
+        <div>
+          <h1 className="text-3xl font-semibold text-gray-800">Estadística</h1>
         </div>
-    );
+        <hr className="border-gray-400 my-4"></hr>
+        <h3 className="text-gray-700 font-semibold mb-4 uppercase">
+          Art.23º.- Son funciones del ESTADÍSTICO:
+        </h3>
+        <NumberedList items={estadisticaFunctions} />
+      </div>
+    </div>
+  );
 };
 
 export default Estadistica;
