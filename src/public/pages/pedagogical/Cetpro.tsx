@@ -166,19 +166,6 @@ const Cetpro = () => {
                 </div>
                 {/* Contenido de la tarjeta */}
                 <div className="p-6 space-y-6">
-                  <div className="text-center space-y-4">
-                    <div className="flex items-center justify-center">
-                      <div className="w-20 h-20 bg-gradient-to-br from-orange-600 to-red-100 rounded-full flex items-center justify-center">
-                        <User className="w-10 h-10 text-red-600" />
-                      </div>
-                    </div>
-                    <div>
-                      <p className="text-lg font-bold text-amber-600 mb-1">
-                        Prof. LEÓN TREJO ALEX SILVIOTRA
-                      </p>
-                      <div className="w-16 h-0.5 bg-gradient-to-r from-amber-600 to-red-400 mx-auto"></div>
-                    </div>
-                  </div>
                   <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-4 border border-red-100">
                     <div className="flex items-center justify-center space-x-2">
                       <Mail className="w-5 h-5 text-amber-600" />
