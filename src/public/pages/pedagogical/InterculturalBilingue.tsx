@@ -22,7 +22,7 @@ import { Mail, User, Building2 } from "lucide-react";
 
 const InterculturalBilingue = () => {
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-amber-50 to-orange-50 min-h-screen">
+    <div className="bg-gradient-to-br from-slate-50 via-amber-50 to-orange-50 min-h-screen mt-20">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 to-blue-600 text-white py-16 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
@@ -41,6 +41,30 @@ const InterculturalBilingue = () => {
       </div>
 
       <div className="container mx-auto px-4 -mt-8 relative z-20">
+        {/* Sección de valores */}
+        <div className="bg-gradient-to-r from-amber-50 via-orange-50 to-red-50 rounded-2xl p-8 mb-12 shadow border border-amber-100">
+          <h3 className="text-2xl font-bold text-amber-700 mb-4">
+            Valores que promovemos
+          </h3>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg text-gray-700">
+            <li className="flex items-center gap-3">
+              <span className="w-3 h-3 bg-amber-500 rounded-full"></span>Respeto
+              por la diversidad cultural
+            </li>
+            <li className="flex items-center gap-3">
+              <span className="w-3 h-3 bg-orange-500 rounded-full"></span>
+              Inclusión y equidad educativa
+            </li>
+            <li className="flex items-center gap-3">
+              <span className="w-3 h-3 bg-red-500 rounded-full"></span>
+              Participación comunitaria
+            </li>
+            <li className="flex items-center gap-3">
+              <span className="w-3 h-3 bg-amber-500 rounded-full"></span>
+              Innovación pedagógica
+            </li>
+          </ul>
+        </div>
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
           {/* Contenido Principal */}
           <div className="xl:col-span-2">
@@ -115,19 +139,14 @@ const InterculturalBilingue = () => {
                       </a>
                     </div>
                   </div>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Espaciado inferior */}
-        <div className="py-12"></div>
       </div>
     </div>
   );
 };
-
 
 export default InterculturalBilingue;

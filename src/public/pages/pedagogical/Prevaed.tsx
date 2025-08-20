@@ -22,24 +22,19 @@ import { Mail, User, Building2 } from "lucide-react";
 
 const Prevaed = () => {
   return (
-    <div className="bg-gradient-to-br from-blue-50 via-white to-amber-100 min-h-screen font-sans">
+    <div className="bg-gradient-to-br from-slate-50 via-amber-50 to-orange-50 min-h-screen mt-20">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-700 via-blue-400 to-amber-400 text-white py-16 px-4 relative overflow-hidden shadow-lg">
+      <div className="bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 to-blue-600 text-white py-16 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -translate-y-48 translate-x-48"></div>
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-white/5 rounded-full translate-y-36 -translate-x-36"></div>
+
         <div className="container mx-auto relative z-10">
-          <div className="flex items-center gap-4 mb-4">
-            <Building2 className="w-14 h-14 text-white drop-shadow-lg" />
-            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight drop-shadow-lg">
-              PREVAED
-            </h1>
+          <div className="flex items-center space-x-4 mb-4">
+            <Building2 className="w-12 h-12 text-white/90" />
+            <h1 className="text-4xl font-bold tracking-tight">PREVAED</h1>
           </div>
-          <div className="w-32 h-1 bg-gradient-to-r from-amber-300 to-blue-300 rounded-full mb-2"></div>
-          <p className="mt-4 text-lg md:text-xl text-white/90 max-w-2xl drop-shadow text-center">
-            Programa multisectorial nacional para la gestión de riesgos y
-            desastres en la educación.
-          </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-yellow-300 to-orange-300 rounded-full"></div>
         </div>
       </div>
 
@@ -48,14 +43,14 @@ const Prevaed = () => {
           {/* Contenido Principal */}
           <div className="xl:col-span-2">
             {/* Funciones */}
-            <div className="bg-white rounded-2xl shadow-lg border border-blue-100/30 p-10 backdrop-blur-sm transition-all duration-300 hover:shadow-2xl">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-3 h-8 bg-gradient-to-b from-blue-700 to-blue-400 rounded-full"></div>
-                <h3 className="text-2xl md:text-3xl font-bold text-blue-900 uppercase tracking-wide">
-                  ¿Qué es PREVAED?
+            <div className="bg-white rounded-2xl shadow-xl shadow-blue-100/50 p-8 border border-blue-100/20 backdrop-blur-sm">
+              <div className="flex items-center space-x-3 mb-8">
+                <div className="w-3 h-8 bg-gradient-to-b from-blue-500 to-indigo-600 rounded-full"></div>
+                <h3 className="text-2xl font-bold text-gray-800 uppercase tracking-wide">
+                  PREVAED:
                 </h3>
               </div>
-              <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
+              <p>
                 Es un programa multisectorial a nivel nacional que aborda el
                 problema específico relacionado con la población y sus medios de
                 vida vulnerables ante el impacto de amenazas con secuelas de
@@ -67,18 +62,18 @@ const Prevaed = () => {
           {/* Tarjeta de Contacto */}
           <div className="xl:col-span-1">
             <div className="sticky top-8">
-              <div className="bg-white rounded-2xl shadow-lg border border-amber-100/30 overflow-hidden backdrop-blur-sm transition-all duration-300 hover:shadow-2xl">
+              <div className="bg-white rounded-2xl shadow-2xl shadow-amber-200/30 overflow-hidden border border-amber-100/20 backdrop-blur-sm">
                 {/* Header de la tarjeta */}
-                <div className="bg-gradient-to-br from-blue-700 via-blue-400 to-amber-400 p-6 text-white relative overflow-hidden">
+                <div className="bg-gradient-to-br from-amber-600 via-orange-600 to-red-600 p-6 text-white relative overflow-hidden">
                   <div className="absolute inset-0 bg-black/10"></div>
                   <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/10 rounded-full"></div>
                   <div className="relative z-10">
                     <div className="flex items-center justify-center mb-4">
-                      <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20">
+                      <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
                         <Mail className="w-8 h-8 text-white" />
                       </div>
                     </div>
-                    <h6 className="text-2xl font-bold text-center tracking-wide drop-shadow">
+                    <h6 className="text-2xl font-bold text-center tracking-wide">
                       CONTACTO
                     </h6>
                   </div>
@@ -88,28 +83,29 @@ const Prevaed = () => {
                 <div className="p-6 space-y-6">
                   <div className="text-center space-y-4">
                     <div className="flex items-center justify-center">
-                      <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-amber-100 rounded-full flex items-center justify-center border border-blue-200">
-                        <User className="w-10 h-10 text-blue-700" />
+                      <div className="w-20 h-20 bg-gradient-to-br from-orange-600 to-red-100 rounded-full flex items-center justify-center">
+                        <User className="w-10 h-10 text-red-600" />
                       </div>
                     </div>
+
                     <div>
-                      <p className="text-lg font-bold text-blue-700 mb-1">
-                        Prof. LEÓN TREJO ALEX SILVIOTRA
+                      <p className="text-lg font-bold text-amber-600 mb-1">
+                        {/* Prof. LEÓN TREJO ALEX SILVIOTRA */}
                       </p>
-                      <div className="w-16 h-0.5 bg-gradient-to-r from-blue-700 to-amber-400 mx-auto"></div>
+                      <div className="w-16 h-0.5 bg-gradient-to-r from-amber-600 to-red-400 mx-auto"></div>
                     </div>
                   </div>
-                  <div className="bg-gradient-to-br from-blue-50 to-amber-50 rounded-xl p-4 border border-blue-100">
-                    <div className="flex items-center justify-center gap-2">
-                      <Mail className="w-5 h-5 text-blue-700" />
+
+                  <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-4 border border-red-100">
+                    <div className="flex items-center justify-center space-x-2">
+                      <Mail className="w-5 h-5 text-amber-600" />
                       <a
-                        href="mailto:informes@ugelpomabamba.gob.pe"
-                        className="text-blue-700 font-semibold hover:text-amber-600 transition-colors duration-200 hover:underline"
+                        href="mailto:ppampa@ugelpomabamba.gob.pe"
+                        className="text-amber-700 font-semibold hover:text-red-800 transition-colors duration-200 hover:underline"
                       >
                         informes@ugelpomabamba.gob.pe
                       </a>
                     </div>
-                  </div>
                   </div>
                 </div>
               </div>

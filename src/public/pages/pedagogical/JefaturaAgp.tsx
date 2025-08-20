@@ -35,41 +35,10 @@ const gestionCurricularFunctions: string[] = [
   "Cumplir las demás funciones que le asigne el Director.",
 ];
 
-// const JefaturaAgp = () => {
-//   return (
-//     <div className="bg-gray-100 min-h-screen px-4 py-8">
-//       <div className="container mx-auto">
-//         {/* Título y breadcrumb */}
-//         <div>
-//           <h1 className="text-3xl font-semibold text-gray-800">Jefatura AGP</h1>
-//         </div>
-//         <hr className="border-gray-400 my-4"></hr>
-//         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-//           {/* Texto a la izquierda */}
-//           <div>
-//             <h3 className="text-gray-700 font-semibold mb-4 uppercase">Art.7º.- FUNCIONES GENERALES DEL ÁREA:</h3>
-//             <NumberedList items={gestionPedagogicaFunctions}/>
-//             <h3 className="text-gray-700 font-semibold mt-10 mb-4 uppercase">Art.8º.- Son funciones del Jefe del Área de Gestión Pedagógica:</h3>
-//             <NumberedList items={gestionCurricularFunctions}/>
-//           </div>
-
-//           {/* Imagen a la derecha */}
-//           <div>
-//             <div className="bg-white p-6 rounded-md shadow-md text-center">
-//                 <h6 className="text-2xl text-green-700 font-semibold">CONTACTO</h6>
-//                 <p className="text-gray-600 font-bold mt-4">Prof. LEÓN TREJO ALEX SILVIOTRA</p>
-//                 <a href="mailto:aleon@ugelpomabamba.gob.pe" className="text-sm underline text-green-600">aleon@ugelpomabamba.gob.pe</a>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
 
 const JefaturaAgp = () => {
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-amber-50 to-orange-50 min-h-screen">
+    <div className="bg-gradient-to-br from-slate-50 via-amber-50 to-orange-50 min-h-screen mt-20">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 to-blue-600 text-white py-16 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>

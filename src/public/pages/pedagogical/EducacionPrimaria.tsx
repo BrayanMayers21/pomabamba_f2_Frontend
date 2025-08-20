@@ -21,25 +21,11 @@ const accionesPedagogicasFunctions: string[] = [
   "Realizar otras acciones delegadas por el jefe.",
 ];
 
-// const EducacionPrimaria = () => {
-//     return (
-//         <div className="bg-gray-100 min-h-screen px-4 py-8">
-//             <div className="container mx-auto">
-//                 {/* Título y breadcrumb */}
-//                 <div>
-//                     <h1 className="text-3xl font-semibold text-gray-800">Educación Primaria</h1>
-//                 </div>
-//                 <hr className="border-gray-400 my-4"></hr>
-//                 <h3 className="text-gray-700 font-semibold mb-4 uppercase">Art.9º.- Son funciones del ESPECIALISTA EN EDUCACIÓN PRIMARIA:</h3>
-//                 <NumberedList items={accionesPedagogicasFunctions} />
-//             </div>
-//         </div>
-//     );
-// };
+
 
 const EducacionPrimaria = () => {
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-amber-50 to-orange-50 min-h-screen">
+    <div className="bg-gradient-to-br from-slate-50 via-amber-50 to-orange-50 min-h-screen mt-20">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 to-blue-600 text-white py-16 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
