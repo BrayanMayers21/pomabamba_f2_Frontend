@@ -1,7 +1,32 @@
-import { Mail, User, Building2 } from 'lucide-react';
-import NumberedList from "../../components/NumberedList";
+import { Mail, User, Building2, Target, Phone, MapPin } from "lucide-react";
+import { useState } from "react";
 
-const generalFunctions: string[] = [
+interface NumberedListProps {
+  items: string[];
+}
+
+const NumberedList = ({ items }: NumberedListProps) => {
+  return (
+    <div className="grid gap-4">
+      {items.map((item, index) => (
+        <div key={index} className="group">
+          <div className="bg-white rounded-xl border-l-4 border-amber-500 shadow-md hover:shadow-xl transition-all duration-300 p-5 hover:transform hover:scale-[1.02]">
+            <div className="flex items-start space-x-4">
+              <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-amber-500 to-orange-600 text-white rounded-lg flex items-center justify-center font-bold text-sm shadow-lg group-hover:rotate-6 transition-transform duration-300">
+                {index + 1}
+              </div>
+              <p className="text-gray-700 leading-relaxed flex-1 group-hover:text-gray-900 transition-colors duration-200">
+                {item}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const generalFunctions = [
   "Orientar, coordinar, ejecutar y supervisar las acciones educativas inherentes a su cargo.",
   "Desarrollar los planes y programas.",
   "Orientar el uso de métodos y técnicas de enseñanza – aprendizaje, utilizando materiales educativos.",
@@ -39,42 +64,105 @@ const generalFunctions: string[] = [
 
 
 const Cetpro = () => {
+  const [activeTab] = useState("funciones");
+
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-amber-50 to-orange-50 min-h-screen">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 to-blue-600 text-white py-16 px-4 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-amber-50 to-orange-50">
+      {/* Hero Banner estilo inicial */}
+      <div className="bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 text-white py-16 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -translate-y-48 translate-x-48"></div>
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-white/5 rounded-full translate-y-36 -translate-x-36"></div>
-        
         <div className="container mx-auto relative z-10">
           <div className="flex items-center space-x-4 mb-4">
             <Building2 className="w-12 h-12 text-white/90" />
             <h1 className="text-4xl font-bold tracking-tight">CETPRO</h1>
           </div>
-          <div className="w-24 h-1 bg-gradient-to-r from-yellow-300 to-orange-300 rounded-full"></div>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 -mt-8 relative z-20">
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
-          {/* Contenido Principal */}
-          <div className="xl:col-span-2">
-           
-            {/* Funciones */}
-            <div className="bg-white rounded-2xl shadow-xl shadow-blue-100/50 p-8 border border-blue-100/20 backdrop-blur-sm">
-              <div className="flex items-center space-x-3 mb-8">
-                <div className="w-3 h-8 bg-gradient-to-b from-blue-500 to-indigo-600 rounded-full"></div>
-                <h3 className="text-2xl font-bold text-gray-800 uppercase tracking-wide">
-                 Art.11º.- Son funciones del EN EDUCACIÓN BÁSICA ALTERNATIVA Y EDUCACIÓN TÉCNICO PRODUCTIVA Y CETPROS:
-                </h3>
-              </div>
-              <NumberedList items={generalFunctions} />
+      <div className="container mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Main Content Area */}
+          <div className="lg:col-span-2">
+            {activeTab === "funciones" && (
+              <div className="space-y-8">
+                {/* Section Header */}
+                <div className="text-center">
+                  <h2 className="text-3xl font-bold text-gray-800 mb-4">
+                    Funciones Institucionales
+                  </h2>
+                  <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-600 rounded-full mx-auto mb-6"></div>
+                  <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    <strong>Art.11º.-</strong> Son funciones del EN EDUCACIÓN
+                    BÁSICA ALTERNATIVA Y EDUCACIÓN TÉCNICO PRODUCTIVA Y CETPROS:
+                  </p>
+                </div>
 
-            </div>
+                {/* Functions List */}
+                <NumberedList items={generalFunctions} />
+              </div>
+            )}
+
+            {activeTab === "contacto" && (
+              <div className="bg-white rounded-2xl shadow-xl p-8">
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-amber-500 to-orange-600 rounded-2xl mb-6">
+                    <Mail className="w-8 h-8 text-white" />
+                  </div>
+                  <h2 className="text-3xl font-bold text-gray-800 mb-4">
+                    Información de Contacto
+                  </h2>
+                  <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-600 rounded-full mx-auto"></div>
+                </div>
+
+                <div className="grid gap-6">
+                  <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl border border-amber-200">
+                    <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl flex items-center justify-center">
+                      <Mail className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-800">
+                        Email Institucional
+                      </p>
+                      <a
+                        href="mailto:informes@ugelpomabamba.gob.pe"
+                        className="text-amber-600 hover:text-orange-700 font-medium"
+                      >
+                        informes@ugelpomabamba.gob.pe
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl border border-amber-200">
+                    <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl flex items-center justify-center">
+                      <MapPin className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-800">Ubicación</p>
+                      <p className="text-gray-600">UGEL Pomabamba - Ancash</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl border border-amber-200">
+                    <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl flex items-center justify-center">
+                      <Phone className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-800">
+                        Horario de Atención
+                      </p>
+                      <p className="text-gray-600">
+                        Lunes a Viernes: 8:00 AM - 5:00 PM
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
-          {/* Tarjeta de Contacto */}
+          {/* Sidebar estilo inicial */}
           <div className="xl:col-span-1">
             <div className="sticky top-8">
               <div className="bg-white rounded-2xl shadow-2xl shadow-amber-200/30 overflow-hidden border border-amber-100/20 backdrop-blur-sm">
@@ -88,32 +176,18 @@ const Cetpro = () => {
                         <Mail className="w-8 h-8 text-white" />
                       </div>
                     </div>
-                    <h6 className="text-2xl font-bold text-center tracking-wide">CONTACTO</h6>
+                    <h6 className="text-2xl font-bold text-center tracking-wide">
+                      CONTACTO
+                    </h6>
                   </div>
                 </div>
-                
                 {/* Contenido de la tarjeta */}
                 <div className="p-6 space-y-6">
-                  <div className="text-center space-y-4">
-                    <div className="flex items-center justify-center">
-                      <div className="w-20 h-20 bg-gradient-to-br from-orange-600 to-red-100 rounded-full flex items-center justify-center">
-                        <User className="w-10 h-10 text-red-600" />
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <p className="text-lg font-bold text-amber-600 mb-1">
-                        {/* Prof. LEÓN TREJO ALEX SILVIOTRA */}
-                      </p>
-                      <div className="w-16 h-0.5 bg-gradient-to-r from-amber-600 to-red-400 mx-auto"></div>
-                    </div>
-                  </div>
-                  
                   <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-4 border border-red-100">
                     <div className="flex items-center justify-center space-x-2">
                       <Mail className="w-5 h-5 text-amber-600" />
-                      <a 
-                        href="mailto:ppampa@ugelpomabamba.gob.pe" 
+                      <a
+                        href="mailto:informes@ugelpomabamba.gob.pe"
                         className="text-amber-700 font-semibold hover:text-red-800 transition-colors duration-200 hover:underline"
                       >
                         informes@ugelpomabamba.gob.pe
@@ -125,9 +199,6 @@ const Cetpro = () => {
             </div>
           </div>
         </div>
-        
-        {/* Espaciado inferior */}
-        <div className="py-12"></div>
       </div>
     </div>
   );

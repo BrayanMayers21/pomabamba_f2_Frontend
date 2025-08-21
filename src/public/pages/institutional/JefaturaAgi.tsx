@@ -1,4 +1,11 @@
-import {  Users, Mail, User, FileText, Briefcase, CheckCircle } from 'lucide-react';
+import {
+  Users,
+  Mail,
+  User,
+  FileText,
+  Briefcase,
+  CheckCircle,
+} from "lucide-react";
 import NumberedList from "../../components/NumberedList";
 
 const planeamientoFunctions: string[] = [
@@ -10,7 +17,7 @@ const planeamientoFunctions: string[] = [
   "Realizar estudios sobre oferta y demanda educativa y proponer la creación, fusión, reubicación y ampliación de instituciones educativas.",
   "Realizar estudios estadísticos y elaborar indicadores para la toma de decisiones.",
   "Elaborar y mantener actualizada la Carta Educativa y el padrón de instituciones educativas.",
-  "Programar y evaluar los proyectos de inversión en infraestructura, equipamiento técnico y cooperación técnica."
+  "Programar y evaluar los proyectos de inversión en infraestructura, equipamiento técnico y cooperación técnica.",
 ];
 
 const areaPlaneamientoFunctions: string[] = [
@@ -28,9 +35,8 @@ const areaPlaneamientoFunctions: string[] = [
   "Participar y proponer la aprobación de los proyectos y diseños técnicos de arquitectura escolar.",
   "Programar y coordinar con las entidades pertinentes actividades destinadas a la construcción y mantenimiento de locales escolares.",
   "Dirigir y supervisar la elaboración del Plan Operativo Institucional y sus evaluaciones, así como los demás documentos de gestión.",
-  "Visar los proyectos de resoluciones que impliquen en ofertación presupuestaria."
+  "Visar los proyectos de resoluciones que impliquen en ofertación presupuestaria.",
 ];
-
 
 // const JefaturaAgi = () => {
 //   return (
@@ -66,21 +72,22 @@ const areaPlaneamientoFunctions: string[] = [
 //   );
 // };
 
-
 const JefaturaAgi = () => {
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-emerald-50 to-teal-50 min-h-screen">
+    <div className="bg-gradient-to-br from-slate-50 via-emerald-50 to-teal-50 min-h-screen mt-20">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white py-16 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -translate-y-48 translate-x-48"></div>
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-white/5 rounded-full translate-y-36 -translate-x-36"></div>
-        
+
         <div className="container mx-auto relative z-10">
           <div className="flex items-center space-x-4 mb-4">
             <Users className="w-12 h-12 text-white/90" />
             <div>
-              <h1 className="text-4xl lg:text-4xl font-bold tracking-tight">Jefatura AGI</h1>              
+              <h1 className="text-4xl lg:text-4xl font-bold tracking-tight">
+                Jefatura AGI
+              </h1>
             </div>
           </div>
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-300 to-orange-300 rounded-full"></div>
@@ -99,17 +106,21 @@ const JefaturaAgi = () => {
                   FUNCIONES GENERALES
                 </h2>
               </div>
-              
+
               {/* Artículo Legal */}
               <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-400 p-6 rounded-xl mb-6">
                 <div className="flex items-start space-x-3">
                   <FileText className="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h3 className="font-semibold text-emerald-800 mb-2">Artículo 18º</h3>
+                    <h3 className="font-semibold text-emerald-800 mb-2">
+                      Artículo 18º
+                    </h3>
                     <p className="text-gray-700 text-sm leading-relaxed text-justify">
-                      El Área de Gestión Institucional, es responsable de brindar apoyo técnico en las áreas de 
-                      planeamiento, presupuesto, estadística, racionalización e infraestructura del Órgano de Dirección y 
-                      a las instituciones educativas.
+                      El Área de Gestión Institucional, es responsable de
+                      brindar apoyo técnico en las áreas de planeamiento,
+                      presupuesto, estadística, racionalización e
+                      infraestructura del Órgano de Dirección y a las
+                      instituciones educativas.
                     </p>
                   </div>
                 </div>
@@ -129,14 +140,15 @@ const JefaturaAgi = () => {
                   <span>Funciones del Jefe del Área</span>
                 </h3>
               </div>
-              
+
               {/* Artículo Legal */}
               <div className="bg-gradient-to-r from-teal-50 to-green-50 border-l-4 border-teal-400 p-4 rounded-lg mb-6">
                 <p className="text-sm text-gray-700 leading-relaxed text-justify">
-                  <strong>Art.19º.-</strong> Son funciones del Jefe del Área de Gestión Institucional:
+                  <strong>Art.19º.-</strong> Son funciones del Jefe del Área de
+                  Gestión Institucional:
                 </p>
               </div>
-              
+
               <div className="bg-gradient-to-br from-teal-50 to-green-50 rounded-xl p-6 border border-teal-100">
                 <NumberedList items={areaPlaneamientoFunctions} />
               </div>
@@ -157,10 +169,12 @@ const JefaturaAgi = () => {
                         <Mail className="w-8 h-8 text-white" />
                       </div>
                     </div>
-                    <h6 className="text-2xl font-bold text-center tracking-wide">CONTACTO</h6>
+                    <h6 className="text-2xl font-bold text-center tracking-wide">
+                      CONTACTO
+                    </h6>
                   </div>
                 </div>
-                
+
                 <div className="p-6 space-y-6">
                   <div className="text-center space-y-4">
                     <div className="flex items-center justify-center">
@@ -168,7 +182,7 @@ const JefaturaAgi = () => {
                         <User className="w-10 h-10 text-indigo-600" />
                       </div>
                     </div>
-                    
+
                     <div>
                       <p className="text-lg font-bold text-gray-800 mb-1">
                         MAG. ELMER RONALD GAMARRA MENDOZA
@@ -176,12 +190,12 @@ const JefaturaAgi = () => {
                       <div className="w-16 h-0.5 bg-gradient-to-r from-blue-400 to-teal-400 mx-auto"></div>
                     </div>
                   </div>
-                  
+
                   <div className="bg-gradient-to-br from-blue-50 to-blue-50 rounded-xl p-4 border border-blue-100">
                     <div className="flex items-center justify-center space-x-2">
                       <Mail className="w-5 h-5 text-blue-600" />
-                      <a 
-                        href="mailto:lhuaman@ugelpomabamba.gob.pe" 
+                      <a
+                        href="mailto:lhuaman@ugelpomabamba.gob.pe"
                         className="text-blue-700 font-semibold hover:text-blue-800 transition-colors duration-200 hover:underline"
                       >
                         egamarra@ugelpomabamba.gob.pe
@@ -193,8 +207,6 @@ const JefaturaAgi = () => {
 
               {/* Áreas de Responsabilidad */}
               <div className="bg-white rounded-2xl shadow-xl shadow-teal-100/50 p-6 border border-teal-100/20 backdrop-blur-sm">
-               
-
                 {/* Información adicional */}
                 <div className="bg-gradient-to-br from-blue-50 to-teal-50 rounded-xl p-4 border border-blue-100 mt-4">
                   <div className="text-center">
@@ -202,7 +214,8 @@ const JefaturaAgi = () => {
                       <CheckCircle className="w-4 h-4 text-white" />
                     </div>
                     <p className="text-sm text-gray-700 leading-relaxed">
-                      Gestión administrativa integral para el funcionamiento eficiente de la UGEL.
+                      Gestión administrativa integral para el funcionamiento
+                      eficiente de la UGEL.
                     </p>
                   </div>
                 </div>
@@ -210,7 +223,7 @@ const JefaturaAgi = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Espaciado inferior */}
         <div className="py-12"></div>
       </div>

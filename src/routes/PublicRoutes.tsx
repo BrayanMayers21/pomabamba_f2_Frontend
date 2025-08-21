@@ -51,22 +51,31 @@ export const PublicRoute: RouteObject = {
     { path: "/", element: <Home /> },
     { path: "/quienes-somos", element: <About /> },
     { path: "/resena-historica", element: <HistoricalReview /> },
-    
+
     { path: "/noticias", element: <News /> },
     { path: "/noticias/:slug", element: <NewsDetail /> },
-    
+
     { path: "/direccion", element: <Direction /> },
     { path: "/mesa-de-partes", element: <MesaDePartes /> },
     { path: "/tramite-documentario", element: <TramiteDocumentario /> },
     { path: "/actas-y-certificados", element: <ActasYCertificados /> },
     { path: "/relacionista-publico", element: <RelacionistaPublico /> },
-    { path: "/asesoria-juridica/jefatura-de-asesoria-juridica", element: <JefaturaDeAsesoria />},
-    { path: "/asesoria-juridica/admisibilidad-de-recurso-de-apelacion", element: <AdmisibilidadRecurso />},
-    
+    {
+      path: "/asesoria-juridica/jefatura-de-asesoria-juridica",
+      element: <JefaturaDeAsesoria />,
+    },
+    {
+      path: "/asesoria-juridica/admisibilidad-de-recurso-de-apelacion",
+      element: <AdmisibilidadRecurso />,
+    },
+
     { path: "/fut-virtual", element: <FutVirtual /> },
     { path: "/manuales-g-suite", element: <ManualesGSuite /> },
 
-    { path: "/jefatura-de-administracion", element: <JefaturaDeAdministracion /> },
+    {
+      path: "/jefatura-de-administracion",
+      element: <JefaturaDeAdministracion />,
+    },
     { path: "/abastecimiento", element: <Abastecimiento /> },
     { path: "/tesoreria", element: <Tesoreria /> },
     { path: "/contabilidad", element: <Contabilidad /> },
@@ -86,7 +95,7 @@ export const PublicRoute: RouteObject = {
     { path: "/finanzas", element: <Finanzas /> },
     { path: "/estadistica", element: <Estadistica /> },
     { path: "/pela", element: <Pela /> },
-    
+
     { path: "/jefatura-agp", element: <JefaturaAgp /> },
     { path: "/educacion-inicial", element: <EducacionInicial /> },
     { path: "/pronoei", element: <Pronoei /> },
@@ -97,6 +106,5 @@ export const PublicRoute: RouteObject = {
     { path: "/cetpro", element: <Cetpro /> },
     { path: "/prevaed", element: <Prevaed /> },
     { path: "/siagie", element: <Siagie /> },
-    
   ],
 };

@@ -18,7 +18,7 @@ const docenteFunctions: string[] = [
   "Basar sus actividades profesionales en el respeto mutuo, derechos humanos, la Constitución del Perú, solidaridad, tolerancia y cultura de paz y democracia.",
   "Coadyuvar al trabajo en equipo con docentes de la institución y, si aplica, de las instancias de gestión educativa descentralizada.",
   "Participar en los sistemas tutoriales implementados por la institución educativa.",
-  "Cumplir con otros deberes establecidos por la presente ley u otras normas específicas de la materia."
+  "Cumplir con otros deberes establecidos por la presente ley u otras normas específicas de la materia.",
 ];
 
 
@@ -39,9 +39,41 @@ const docenteFunctions: string[] = [
 // };
 
 
+// const Coproa = () => {
+//     return (
+//         <div className="bg-gray-100 min-h-screen px-4 py-8">
+//             <div className="container mx-auto">
+//                 {/* Título y breadcrumb */}
+//                 <div>
+//                     <h1 className="text-3xl font-semibold text-gray-800">COPROA</h1>
+//                 </div>
+//                 <hr className="border-gray-400 my-4"></hr>
+//                 <h3 className="text-gray-700 font-semibold mb-4 uppercase">Son funciones de los Docentes:</h3>
+//                 <NumberedList items={docenteFunctions} />
+//             </div>
+//         </div>
+//     );
+// };
+
+// const Coproa = () => {
+//     return (
+//         <div className="bg-gray-100 min-h-screen px-4 py-8">
+//             <div className="container mx-auto">
+//                 {/* Título y breadcrumb */}
+//                 <div>
+//                     <h1 className="text-3xl font-semibold text-gray-800">COPROA</h1>
+//                 </div>
+//                 <hr className="border-gray-400 my-4"></hr>
+//                 <h3 className="text-gray-700 font-semibold mb-4 uppercase">Son funciones de los Docentes:</h3>
+//                 <NumberedList items={docenteFunctions} />
+//             </div>
+//         </div>
+//     );
+// };
+
 const Coproa = () => {
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50 min-h-screen">
+    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50 min-h-screen mt-20">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-emerald-600 via-teal-600 to-blue-600 text-white py-16 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>

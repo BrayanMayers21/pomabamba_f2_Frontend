@@ -1,15 +1,289 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --font-sans: 'Roboto', sans-serif;
+  --font-sans: "Roboto", sans-serif;
 }
 
 .prose * {
   margin: 0 !important;
 }
 
-.ql-align-center{
+.ql-align-center {
   text-align: center !important;
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Estilos para MDEditor en tema oscuro */
+.dark .w-md-editor,
+[data-toolpad-color-scheme="dark"] .w-md-editor {
+  background-color: hsl(var(--card));
+  border-color: hsl(var(--border));
+}
+
+.dark .w-md-editor-text-container,
+.dark .w-md-editor-text-input,
+.dark .w-md-editor-text-area,
+[data-toolpad-color-scheme="dark"] .w-md-editor-text-container,
+[data-toolpad-color-scheme="dark"] .w-md-editor-text-input,
+[data-toolpad-color-scheme="dark"] .w-md-editor-text-area {
+  background-color: hsl(var(--background)) !important;
+  color: hsl(var(--foreground)) !important;
+  border-color: hsl(var(--border)) !important;
+}
+
+.dark .w-md-editor-bar,
+[data-toolpad-color-scheme="dark"] .w-md-editor-bar {
+  background-color: hsl(var(--muted)) !important;
+  border-color: hsl(var(--border)) !important;
+}
+
+.dark .w-md-editor-bar svg,
+[data-toolpad-color-scheme="dark"] .w-md-editor-bar svg {
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+.dark .w-md-editor-bar button:hover,
+[data-toolpad-color-scheme="dark"] .w-md-editor-bar button:hover {
+  background-color: hsl(var(--accent)) !important;
+  color: hsl(var(--accent-foreground)) !important;
+}
+
+.dark .w-md-editor-bar button.active,
+[data-toolpad-color-scheme="dark"] .w-md-editor-bar button.active {
+  background-color: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+/* Estilos adicionales para MDEditor */
+[data-color-mode="dark"] .w-md-editor {
+  background-color: hsl(var(--card));
+  border-color: hsl(var(--border));
+}
+
+[data-color-mode="dark"] .w-md-editor-text-container > .w-md-editor-text-input,
+[data-color-mode="dark"] .w-md-editor-text-container > .w-md-editor-text-area,
+[data-color-mode="dark"] .w-md-editor-text {
+  background-color: hsl(var(--background)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+[data-color-mode="dark"] .w-md-editor-bar {
+  background-color: hsl(var(--muted)) !important;
+  border-bottom-color: hsl(var(--border)) !important;
+}
+
+[data-color-mode="dark"] .w-md-editor-bar svg {
+  fill: hsl(var(--muted-foreground)) !important;
+}
+
+/* Forzar adaptación para formularios en tema oscuro */
+[data-toolpad-color-scheme="dark"] .bg-card,
+[data-toolpad-color-scheme="dark"] .bg-background {
+  background-color: hsl(var(--card)) !important;
+}
+
+[data-toolpad-color-scheme="dark"] .text-foreground,
+[data-toolpad-color-scheme="dark"] .text-card-foreground {
+  color: hsl(var(--foreground)) !important;
+}
+
+[data-toolpad-color-scheme="dark"] .border-border {
+  border-color: hsl(var(--border)) !important;
+}
+
+/* Asegurar que todos los elementos del formulario respeten el tema */
+.dark input[type="text"],
+.dark input[type="date"],
+.dark textarea,
+.dark select,
+[data-toolpad-color-scheme="dark"] input[type="text"],
+[data-toolpad-color-scheme="dark"] input[type="date"],
+[data-toolpad-color-scheme="dark"] textarea,
+[data-toolpad-color-scheme="dark"] select {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  border-color: hsl(var(--border));
+}
+
+.dark input[type="text"]:focus,
+.dark input[type="date"]:focus,
+.dark textarea:focus,
+.dark select:focus,
+[data-toolpad-color-scheme="dark"] input[type="text"]:focus,
+[data-toolpad-color-scheme="dark"] input[type="date"]:focus,
+[data-toolpad-color-scheme="dark"] textarea:focus,
+[data-toolpad-color-scheme="dark"] select:focus {
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 2px hsl(var(--primary) / 0.2);
+}
+
+/* Estilos específicos para tablas en tema oscuro */
+.dark table,
+[data-toolpad-color-scheme="dark"] table {
+  background-color: transparent;
+}
+
+.dark tbody tr,
+[data-toolpad-color-scheme="dark"] tbody tr {
+  border-color: rgb(75, 85, 99) !important;
+}
+
+.dark tbody tr:hover,
+[data-toolpad-color-scheme="dark"] tbody tr:hover {
+  background-color: rgba(75, 85, 99, 0.3) !important;
+}
+
+.dark th,
+[data-toolpad-color-scheme="dark"] th {
+  background-color: rgb(55, 65, 81) !important;
+  color: rgb(209, 213, 219) !important;
+  border-color: rgb(75, 85, 99) !important;
+}
+
+.dark td,
+[data-toolpad-color-scheme="dark"] td {
+  color: rgb(229, 231, 235) !important;
+  border-color: rgb(75, 85, 99) !important;
+}
+
+/* Estilos para badges en tema oscuro */
+.dark .badge,
+[data-toolpad-color-scheme="dark"] .badge {
+  background-color: rgb(75, 85, 99);
+  color: rgb(229, 231, 235);
+  border-color: rgb(107, 114, 128);
+}
+
+.dark .badge[data-variant="outline"],
+[data-toolpad-color-scheme="dark"] .badge[data-variant="outline"] {
+  background-color: transparent;
+  color: rgb(156, 163, 175);
+  border-color: rgb(107, 114, 128);
+}
+
+.dark .badge[data-variant="secondary"],
+[data-toolpad-color-scheme="dark"] .badge[data-variant="secondary"] {
+  background-color: rgb(55, 65, 81);
+  color: rgb(209, 213, 219);
+  border-color: rgb(75, 85, 99);
 }

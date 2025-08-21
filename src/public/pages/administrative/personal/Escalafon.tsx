@@ -10,23 +10,25 @@ const generalFunctions: string[] = [
   "Remitir los reportes de resoluciones a la sede central para el escalafón mecanizado.",
   "Revisar y firmar los pases.",
   "Sistematizar el escalafón de personal.",
-  "Realizar las demás funciones afines al cargo."
+  "Realizar las demás funciones afines al cargo.",
 ];
 
 const Escalafon = () => {
-    return (
-        <div className="bg-gray-100 min-h-screen px-4 py-8">
-            <div className="container mx-auto">
-                {/* Título y breadcrumb */}
-                <div>
-                    <h1 className="text-3xl font-semibold text-gray-800">Escalafón</h1>
-                </div>
-                <hr className="border-gray-400 my-4"></hr>
-                <h3 className="text-gray-700 font-semibold mb-4 uppercase">Art.41º.- Son funciones del ESPECIALISTA ADMINISTRATIVO I - ESCALAFÓN</h3>
-                <NumberedList items={generalFunctions} />
-            </div>
+  return (
+    <div className="bg-gray-100 min-h-screen px-4 py-8 mt-20">
+      <div className="container mx-auto">
+        {/* Título y breadcrumb */}
+        <div>
+          <h1 className="text-3xl font-semibold text-gray-800">Escalafón</h1>
         </div>
-    );
+        <hr className="border-gray-400 my-4"></hr>
+        <h3 className="text-gray-700 font-semibold mb-4 uppercase">
+          Art.41º.- Son funciones del ESPECIALISTA ADMINISTRATIVO I - ESCALAFÓN
+        </h3>
+        <NumberedList items={generalFunctions} />
+      </div>
+    </div>
+  );
 };
 
 export default Escalafon;

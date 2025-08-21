@@ -5,7 +5,7 @@ const imagen = '/images/institutional/img1.jpg'; // Reemplaza con tu imagen real
 
 const HistoricalReview = () => {
     return (
-        <div className="bg-gradient-to-br from-slate-50 via-amber-50 to-orange-50 min-h-screen">
+        <div className="bg-gradient-to-br from-slate-50 via-amber-50 to-orange-50 min-h-screen mt-20">
             {/* Hero Section */}
             <div className="bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 text-white py-16 px-4 relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/10"></div>

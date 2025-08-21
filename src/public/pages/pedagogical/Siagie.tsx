@@ -1,35 +1,20 @@
-import { Mail, User, Building2 } from 'lucide-react';
-// const Siagie = () => {
-//     return (
-//         <div className="bg-gray-100 min-h-screen px-4 py-8">
-//             <div className="container mx-auto">
-//                 {/* Título y breadcrumb */}
-//                 <div>
-//                     <h1 className="text-3xl font-semibold text-gray-800">SIAGIE</h1>
-//                 </div>
-//                 <hr className="border-gray-400 my-4"></hr>
-//                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-//                     <div>
-//                         <p className="text-sm text-gray-600 text-justify">El SIAGIE es el aplicativo informático que el Ministerio de Educación pone a disposición de las instituciones educativas públicas y privadas a nivel nacional a fin que gestionen la información de los procesos de matrícula, asistencia y evaluación de estudiantes. Permite el aseguramiento de la aplicación estandarizada del marco normativo que regula los procesos de matrícula y evaluación de estudiantes; así como contar por primera vez con una base de datos nacional que a su vez permita disponer de indicadores de gestión que apoyen la toma de decisiones a nivel de IE, UGEL, DRE, Ministerio de Educación y otras entidades.</p>
-//                     </div>
-//                     <div></div>
-//                 </div>
-                
-//             </div>
-//         </div>
-//     );
-// };
-
+import { Mail, User, Building2 } from "lucide-react";
+import {
+  FaExternalLinkAlt,
+  FaInfoCircle,
+  FaBook,
+  FaUserGraduate,
+  FaDatabase,
+} from "react-icons/fa";
 
 const Siagie = () => {
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-amber-50 to-orange-50 min-h-screen">
+    <div className="bg-gradient-to-br from-slate-50 via-amber-50 to-orange-50 min-h-screen mt-20">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 to-blue-600 text-white py-16 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -translate-y-48 translate-x-48"></div>
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-white/5 rounded-full translate-y-36 -translate-x-36"></div>
-        
         <div className="container mx-auto relative z-10">
           <div className="flex items-center space-x-4 mb-4">
             <Building2 className="w-12 h-12 text-white/90" />
@@ -43,16 +28,57 @@ const Siagie = () => {
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
           {/* Contenido Principal */}
           <div className="xl:col-span-2">
-           
-            {/* Funciones */}
             <div className="bg-white rounded-2xl shadow-xl shadow-blue-100/50 p-8 border border-blue-100/20 backdrop-blur-sm">
               <div className="flex items-center space-x-3 mb-8">
                 <div className="w-3 h-8 bg-gradient-to-b from-blue-500 to-indigo-600 rounded-full"></div>
                 <h3 className="text-2xl font-bold text-gray-800 uppercase tracking-wide">
-                 SIAGIE:
+                  SIAGIE:
                 </h3>
               </div>
-              <p>El SIAGIE es el aplicativo informático que el Ministerio de Educación pone a disposición de las instituciones educativas públicas y privadas a nivel nacional a fin que gestionen la información de los procesos de matrícula, asistencia y evaluación de estudiantes. Permite el aseguramiento de la aplicación estandarizada del marco normativo que regula los procesos de matrícula y evaluación de estudiantes; así como contar por primera vez con una base de datos nacional que a su vez permita disponer de indicadores de gestión que apoyen la toma de decisiones a nivel de IE, UGEL, DRE, Ministerio de Educación y otras entidades.</p>
+              <section className="mb-6">
+                <h2 className="text-xl font-semibold text-amber-600 flex items-center gap-2 mb-2">
+                  <FaInfoCircle className="text-amber-700" /> ¿Qué es el SIAGIE?
+                </h2>
+                <p className="text-base text-gray-700 text-justify">
+                  El <b>SIAGIE</b> es el aplicativo informático oficial del
+                  Ministerio de Educación del Perú, diseñado para gestionar la
+                  información de los procesos de matrícula, asistencia y
+                  evaluación de estudiantes en instituciones educativas públicas
+                  y privadas a nivel nacional.
+                </p>
+              </section>
+              <section className="mb-6">
+                <h2 className="text-xl font-semibold text-amber-600 flex items-center gap-2 mb-2">
+                  <FaDatabase className="text-amber-700" /> Funcionalidades
+                  principales
+                </h2>
+                <ul className="list-disc pl-5 text-gray-700">
+                  <li>Gestión de matrícula de estudiantes.</li>
+                  <li>Registro y control de asistencia.</li>
+                  <li>Evaluación académica y generación de reportes.</li>
+                  <li>Base de datos nacional para toma de decisiones.</li>
+                  <li>
+                    Aplicación estandarizada del marco normativo educativo.
+                  </li>
+                </ul>
+              </section>
+              <section className="mb-6">
+                <h2 className="text-xl font-semibold text-amber-600 flex items-center gap-2 mb-2">
+                  <FaUserGraduate className="text-amber-700" /> Beneficios
+                </h2>
+                <ul className="list-disc pl-5 text-gray-700">
+                  <li>Facilita la gestión escolar y administrativa.</li>
+                  <li>
+                    Mejora la transparencia y trazabilidad de los procesos.
+                  </li>
+                  <li>
+                    Permite el acceso a información actualizada y confiable.
+                  </li>
+                  <li>
+                    Apoya la toma de decisiones en todos los niveles educativos.
+                  </li>
+                </ul>
+              </section>
             </div>
           </div>
 
@@ -70,35 +96,22 @@ const Siagie = () => {
                         <Mail className="w-8 h-8 text-white" />
                       </div>
                     </div>
-                    <h6 className="text-2xl font-bold text-center tracking-wide">CONTACTO</h6>
+                    <h6 className="text-2xl font-bold text-center tracking-wide">
+                      CONTACTO
+                    </h6>
                   </div>
                 </div>
-                
+
                 {/* Contenido de la tarjeta */}
                 <div className="p-6 space-y-6">
-                  <div className="text-center space-y-4">
-                    <div className="flex items-center justify-center">
-                      <div className="w-20 h-20 bg-gradient-to-br from-orange-600 to-red-100 rounded-full flex items-center justify-center">
-                        <User className="w-10 h-10 text-red-600" />
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <p className="text-lg font-bold text-amber-600 mb-1">
-                        Prof. LEÓN TREJO ALEX SILVIOTRA
-                      </p>
-                      <div className="w-16 h-0.5 bg-gradient-to-r from-amber-600 to-red-400 mx-auto"></div>
-                    </div>
-                  </div>
-                  
                   <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-4 border border-red-100">
                     <div className="flex items-center justify-center space-x-2">
                       <Mail className="w-5 h-5 text-amber-600" />
-                      <a 
-                        href="mailto:ppampa@ugelpomabamba.gob.pe" 
+                      <a
+                        href="mailto:ppampa@ugelpomabamba.gob.pe"
                         className="text-amber-700 font-semibold hover:text-red-800 transition-colors duration-200 hover:underline"
                       >
-                        aleon@ugelpomabamba.gob.pe
+                        informes@ugelpomabamba.gob.pe
                       </a>
                     </div>
                   </div>
@@ -107,13 +120,12 @@ const Siagie = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Espaciado inferior */}
         <div className="py-12"></div>
       </div>
     </div>
   );
 };
-
 
 export default Siagie;

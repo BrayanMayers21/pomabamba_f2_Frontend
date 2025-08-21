@@ -9,7 +9,7 @@ const generalFunctions: string[] = [
   "Revisar y firmar las informaciones de liquidaciones, adelantos por remuneraciones compensatorias y créditos internos (devengados) por diferencia de pensión.",
   "Elaborar informes técnicos referentes a pagos.",
   "Revisar y validar la ejecución de los procesos en el Sistema Único de Planillas de la UGEL Pomabamba.",
-  "Realizar otras funciones inherentes a su cargo."
+  "Realizar otras funciones inherentes a su cargo.",
 ];
 
 const generalFunctionsTecnico: string[] = [
@@ -25,27 +25,30 @@ const generalFunctionsTecnico: string[] = [
   "Realizar las demás funciones que se le asignen.",
   "Realizar las fases de compromiso de la planilla de remuneración y pensiones del personal de la jurisdicción de la Unidad Ejecutora UGEL Pomabamba.",
   "Elaborar la solicitud de certificaciones presupuestales ante el Área de Gestión Institucional (AGI).",
-  "Ejecutar en cuenta Teleahorro los listados de cheques de las remuneraciones."
+  "Ejecutar en cuenta Teleahorro los listados de cheques de las remuneraciones.",
 ];
 
-
 const Planillas = () => {
-    return (
-        <div className="bg-gray-100 min-h-screen px-4 py-8">
-            <div className="container mx-auto">
-                {/* Título y breadcrumb */}
-                <div>
-                    <h1 className="text-3xl font-semibold text-gray-800">Planillas</h1>
-                </div>
-                <hr className="border-gray-400 my-4"></hr>
-                <h3 className="text-gray-700 font-semibold mb-4 uppercase">Art.39º.- Son funciones del ESPECIALISTA ADMINISTRATIVO I  PLANILLAS</h3>
-                <NumberedList items={generalFunctions} />
-                
-                <h3 className="text-gray-700 font-semibold mb-4 mt-10 uppercase">Art.40º.- Son funciones del TÉCNICO ADMINISTRATIVO I - PLANILLAS</h3>
-                <NumberedList items={generalFunctionsTecnico} />
-            </div>
+  return (
+    <div className="bg-gray-100 min-h-screen px-4 py-8 mt-20">
+      <div className="container mx-auto">
+        {/* Título y breadcrumb */}
+        <div>
+          <h1 className="text-3xl font-semibold text-gray-800">Planillas</h1>
         </div>
-    );
+        <hr className="border-gray-400 my-4"></hr>
+        <h3 className="text-gray-700 font-semibold mb-4 uppercase">
+          Art.39º.- Son funciones del ESPECIALISTA ADMINISTRATIVO I PLANILLAS
+        </h3>
+        <NumberedList items={generalFunctions} />
+
+        <h3 className="text-gray-700 font-semibold mb-4 mt-10 uppercase">
+          Art.40º.- Son funciones del TÉCNICO ADMINISTRATIVO I - PLANILLAS
+        </h3>
+        <NumberedList items={generalFunctionsTecnico} />
+      </div>
+    </div>
+  );
 };
 
 export default Planillas;

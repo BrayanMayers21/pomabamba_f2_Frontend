@@ -1,4 +1,4 @@
-import { Mail, User, Building2 } from 'lucide-react';
+import { Mail, User, Building2 } from "lucide-react";
 import NumberedList from "../../components/NumberedList";
 
 const programaFunctions: string[] = [
@@ -8,7 +8,7 @@ const programaFunctions: string[] = [
   "Coordinar con los especialistas del Minedu y personal del Área de Gestión Pedagógica e Institucional de la UGEL, la elaboración de procedimientos y otros instrumentos (caja de herramientas) que permitan mejorar los procesos de las actividades del PP 0090, pudiendo solicitar asistencia técnica al Minedu.",
   "Proponer al Gestor Regional de la DRE de su ámbito y a los funcionarios responsables, mejoras en la implementación de las actividades planificadas del PP 0090.",
   "Elaborar reportes periódicos y hacer presentaciones a partir de información consolidada para los distintos funcionarios de la UGEL/DRE y el Minedu, según corresponda, sobre las mejoras en los desempeños de los beneficiarios del PP 0090.",
-  "Realizar otras actividades inherentes a sus funciones que le asigne la UGEL."
+  "Realizar otras actividades inherentes a sus funciones que le asigne la UGEL.",
 ];
 
 const calidadInformacionFunctions: string[] = [
@@ -19,9 +19,8 @@ const calidadInformacionFunctions: string[] = [
   "Revisar la información registrada en los sistemas de información sectoriales tales como NEXUS, Censo Escolar, Padrón de acompañamiento y Materiales en IIEE, en todas las IIEE en el transcurso del año escolar y emitir informes que alerten a los responsables de los sistemas existentes de la presencia de inconsistencias para promover la actualización de la información.",
   "Verificar la composición de los servicios educativos (códigos modulares) que brindan las instituciones educativas, así como sus locales educativos, en base a las coordinaciones y orientaciones brindadas por la OSEE – Unidad de Estadística.",
   "Realizar informes mensuales sobre el avance en la ejecución de sus actividades y problemas o dificultades identificados en los sistemas de información.",
-  "Realizar otras actividades inherentes a sus funciones que le asigne la UGEL."
+  "Realizar otras actividades inherentes a sus funciones que le asigne la UGEL.",
 ];
-
 
 // const Pela = () => {
 //     return (
@@ -41,16 +40,15 @@ const calidadInformacionFunctions: string[] = [
 //     );
 // };
 
-
 const Pela = () => {
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50 min-h-screen">
+    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50 min-h-screen mt-20">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white py-16 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -translate-y-48 translate-x-48"></div>
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-white/5 rounded-full translate-y-36 -translate-x-36"></div>
-        
+
         <div className="container mx-auto relative z-10">
           <div className="flex items-center space-x-4 mb-4">
             <Building2 className="w-12 h-12 text-white/90" />
@@ -64,7 +62,6 @@ const Pela = () => {
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
           {/* Contenido Principal */}
           <div className="xl:col-span-2">
-            
             {/* Funciones */}
             <div className="bg-white rounded-2xl shadow-xl shadow-blue-100/50 p-8 border border-blue-100/20 backdrop-blur-sm">
               <div className="flex items-center space-x-3 mb-8">
@@ -74,11 +71,12 @@ const Pela = () => {
                 </h3>
               </div>
               <NumberedList items={programaFunctions} />
-              
+
               <div className="flex items-center space-x-3 mb-8 mt-10">
                 <div className="w-3 h-8 bg-gradient-to-b from-blue-500 to-indigo-600 rounded-full"></div>
                 <h3 className="text-2xl font-bold text-gray-800 uppercase tracking-wide">
-                 Son funciones del RESPONSABLE LOCAL DE CALIDAD DE LA INFORMACIÓN
+                  Son funciones del RESPONSABLE LOCAL DE CALIDAD DE LA
+                  INFORMACIÓN
                 </h3>
               </div>
               <NumberedList items={calidadInformacionFunctions} />
@@ -99,10 +97,12 @@ const Pela = () => {
                         <Mail className="w-8 h-8 text-white" />
                       </div>
                     </div>
-                    <h6 className="text-2xl font-bold text-center tracking-wide">CONTACTO</h6>
+                    <h6 className="text-2xl font-bold text-center tracking-wide">
+                      CONTACTO
+                    </h6>
                   </div>
                 </div>
-                
+
                 {/* Contenido de la tarjeta */}
                 <div className="p-6 space-y-6">
                   <div className="text-center space-y-4">
@@ -111,7 +111,7 @@ const Pela = () => {
                         <User className="w-10 h-10 text-blue-600" />
                       </div>
                     </div>
-                    
+
                     <div>
                       <p className="text-lg font-bold text-gray-800 mb-1">
                         {/* Doc. PAMPA MORALES PEDRO ARTEMIO */}
@@ -119,12 +119,12 @@ const Pela = () => {
                       <div className="w-16 h-0.5 bg-gradient-to-r from-blue-400 to-indigo-400 mx-auto"></div>
                     </div>
                   </div>
-                  
+
                   <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-100">
                     <div className="flex items-center justify-center space-x-2">
                       <Mail className="w-5 h-5 text-blue-600" />
-                      <a 
-                        href="mailto:ppampa@ugelpomabamba.gob.pe" 
+                      <a
+                        href="mailto:ppampa@ugelpomabamba.gob.pe"
                         className="text-blue-700 font-semibold hover:text-blue-800 transition-colors duration-200 hover:underline"
                       >
                         informes@ugelpomabamba.gob.pe
@@ -136,7 +136,7 @@ const Pela = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Espaciado inferior */}
         <div className="py-12"></div>
       </div>
