@@ -14,10 +14,7 @@ const menu: MenuItem[] = [
     submenu: [
       { label: "Quienes somos", href: "/quienes-somos" },
       { label: "Reseña histórica", href: "/resena-historica" },
-      { label: "Directorio 2024", href: "#" },
-      { label: "Directorio 2023", href: "#" },
-      { label: "Directorio 2022", href: "#" },
-      { label: "Directorio 2021", href: "#" },
+      { label: "Directorio Institucional", href: "/directorio" },
     ],
   },
   {
@@ -120,7 +117,8 @@ const menu: MenuItem[] = [
     submenu: [
       { label: "Noticias UGEL", href: "/noticias" },
       { label: "Comunicados", href: "#" },
-      { label: "Convocatorias", href: "#" },
+      { label: "Articulos", href: "Article" },
+      { label: "Convocatorias", href: "/Reclutimet" },
     ],
   },
 ];

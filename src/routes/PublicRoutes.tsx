@@ -44,6 +44,9 @@ import InterculturalBilingue from "../public/pages/pedagogical/InterculturalBili
 import Cetpro from "../public/pages/pedagogical/Cetpro";
 import Prevaed from "../public/pages/pedagogical/Prevaed";
 import Siagie from "../public/pages/pedagogical/Siagie";
+import ArticleDetailPage from "../public/pages/article";
+import Directory from "../public/pages/directory";
+import Reclutimet from "../public/pages/Reclutimet";
 
 export const PublicRoute: RouteObject = {
   element: <PublicLayout />,
@@ -51,9 +54,15 @@ export const PublicRoute: RouteObject = {
     { path: "/", element: <Home /> },
     { path: "/quienes-somos", element: <About /> },
     { path: "/resena-historica", element: <HistoricalReview /> },
+    { path: "/directorio", element: <Directory /> },
+    
 
     { path: "/noticias", element: <News /> },
     { path: "/noticias/:slug", element: <NewsDetail /> },
+    { path: "/reclutimet", element: <Reclutimet /> },
+
+    
+    { path: "/article", element: <ArticleDetailPage /> },  
 
     { path: "/direccion", element: <Direction /> },
     { path: "/mesa-de-partes", element: <MesaDePartes /> },
@@ -105,6 +114,6 @@ export const PublicRoute: RouteObject = {
     { path: "/intercultural-bilingue", element: <InterculturalBilingue /> },
     { path: "/cetpro", element: <Cetpro /> },
     { path: "/prevaed", element: <Prevaed /> },
-    { path: "/siagie", element: <Siagie /> },
+    { path: "/siagie", element: <Siagie /> },  
   ],
 };
