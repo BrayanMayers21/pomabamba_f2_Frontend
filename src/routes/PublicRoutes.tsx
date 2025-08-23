@@ -15,6 +15,7 @@ import JefaturaDeAsesoria from "../public/pages/direction/asesoriaJuridica/Jefat
 import AdmisibilidadRecurso from "../public/pages/direction/asesoriaJuridica/AdmisibilidadRecurso";
 import FutVirtual from "../public/pages/services/FutVirtual";
 import ManualesGSuite from "../public/pages/services/ManualesGSuite";
+import LibroReclamaciones from "../public/pages/services/LibroReclamaciones";
 import JefaturaDeAdministracion from "../public/pages/administrative/JefaturaDeAdministracion";
 import Abastecimiento from "../public/pages/administrative/Abastecimiento";
 import Tesoreria from "../public/pages/administrative/Tesoreria";
@@ -80,6 +81,7 @@ export const PublicRoute: RouteObject = {
 
     { path: "/fut-virtual", element: <FutVirtual /> },
     { path: "/manuales-g-suite", element: <ManualesGSuite /> },
+    { path: "/reclamos", element: <LibroReclamaciones /> },
 
     {
       path: "/jefatura-de-administracion",
