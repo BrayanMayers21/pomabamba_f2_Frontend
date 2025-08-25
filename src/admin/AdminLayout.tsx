@@ -3,22 +3,63 @@ import { createTheme } from "@mui/material/styles";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import DescriptionIcon from "@mui/icons-material/Description";
+import NotificationsIcon from "@mui/icons-material/Notifications";
 import { AppProvider, type Navigation } from "@toolpad/core/AppProvider";
 import { DashboardLayout } from "@toolpad/core/DashboardLayout";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import Dashboard from "./pages/Dashboard";
-import Areas from "./pages/Areas";
+import DirectoriesList from "./pages/DirectoriesList";
+// import Areas from "./pages/Areas";
 import Banners from "./pages/Banners";
+import Alerts from "./pages/Alerts";
 import Sales from "./pages/reports/Sales";
 import CreateNoticePageV2 from "./pages/notices/CreateNoticePageV2";
 import NoticiasPage from "../assets/components/noticias/table/NoticiasPage";
+import ArticlesPage from "./pages/Articles";
+import CategoriesList from "./pages/CategoriesList";
+import ConvocatoriasPage from "./convocatorias/ConvocatoriasPage";
+import AuthorsList from "./pages/AuthorsList";
 
 const NAVIGATION: Navigation = [
   { kind: "header", title: "Principal" },
   { segment: "", title: "Dashboard", icon: <DashboardIcon /> },
+  { segment: "directory", title: "Directorios", icon: <DescriptionIcon /> },
   { segment: "areas", title: "Areas", icon: <DashboardIcon /> },
   { segment: "banners", title: "Banners", icon: <DashboardIcon /> },
+  { segment: "alerts", title: "Alertas", icon: <NotificationsIcon /> },
+  {
+    segment: "reclamaciones",
+    title: "Reclamaciones",
+    icon: <DescriptionIcon />,
+  },
+  {
+    segment: "articles",
+    title: "Artículos",
+    icon: <DescriptionIcon />,
+    children: [
+      {
+        segment: "",
+        title: "Articulos",
+        icon: <DescriptionIcon />,
+      },
+      {
+        segment: "list/categories",
+        title: "Categorias",
+        icon: <DescriptionIcon />,
+      },
+      {
+        segment: "list/authors",
+        title: "Autores",
+        icon: <DescriptionIcon />,
+      },
+    ],
+  },
+  {
+    segment: "convocatorias",
+    title: "Convocatorias",
+    icon: <DescriptionIcon />,
+  },
   {
     segment: "notices",
     title: "Noticias",
@@ -63,18 +104,32 @@ function PageContent() {
     case "/admin/dashboard":
     case "/admin/":
       return <Dashboard />;
-    case "/admin/areas":
-      return <Areas />;
+    // case "/admin/areas":
+    //   return <Areas />;
     case "/admin/banners":
       return <Banners />;
+    case "/admin/alerts":
+      return <Alerts />;
     case "/admin/notices/create-notice":
       return <CreateNoticePageV2 />;
     case "/admin/noticias/formulario":
       return <NoticiasPage />;
     case "/admin/notices/list":
       return <NoticiasPage />;
+    case "/admin/articles":
+      return <ArticlesPage />;
+    case "/admin/articles/list/categories":
+      return <CategoriesList />;
+    case "/admin/convocatorias":
+      return <ConvocatoriasPage />;
     case "/admin/reports/sales":
       return <Sales />;
+    case "/admin/articles/list/authors":
+      // Mostrar la página de autores
+      return <AuthorsList />;
+    case "/admin/directory":
+      // Mostrar la página de directorios
+      return <DirectoriesList />;
     default:
       return <Typography>No se encontró la página: {path}</Typography>;
   }

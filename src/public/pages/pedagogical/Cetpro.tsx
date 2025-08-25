@@ -46,28 +46,13 @@ const generalFunctions = [
   "Desarrollar actividades extracurriculares que promueven el mejoramiento de la calidad educativa y la participación de los agentes de la educación.",
 ];
 
-// const Cetpro = () => {
-//     return (
-//         <div className="bg-gray-100 min-h-screen px-4 py-8">
-//             <div className="container mx-auto">
-//                 {/* Título y breadcrumb */}
-//                 <div>
-//                     <h1 className="text-3xl font-semibold text-gray-800">CETPRO</h1>
-//                 </div>
-//                 <hr className="border-gray-400 my-4"></hr>
-//                 <h3 className="text-gray-700 font-semibold mb-4 uppercase">Art.11º.- Son funciones del EN EDUCACIÓN BÁSICA ALTERNATIVA Y EDUCACIÓN TÉCNICO PRODUCTIVA Y CETPROS:</h3>
-//                 <NumberedList items={generalFunctions} />
-//             </div>
-//         </div>
-//     );
-// };
 
 
 const Cetpro = () => {
   const [activeTab] = useState("funciones");
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-amber-50 to-orange-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-amber-50 to-orange-50 mt-20">
       {/* Hero Banner estilo inicial */}
       <div className="bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 text-white py-16 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>

@@ -186,7 +186,6 @@ export const BannerTable = ({
                 <TableCell>Estado</TableCell>
                 <TableCell>Tipo</TableCell>
                 <TableCell>Orden</TableCell>
-                <TableCell>Enlace</TableCell>
                 <TableCell align="right">Acciones</TableCell>
               </TableRow>
             </TableHead>
@@ -218,22 +217,7 @@ export const BannerTable = ({
                     />
                   </TableCell>
                   <TableCell>{banner.order || "-"}</TableCell>
-                  <TableCell>
-                    <Box sx={{ maxWidth: 150 }}>
-                      {banner.link ? (
-                        <a
-                          href={banner.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-blue-600 hover:underline text-sm"
-                        >
-                          {banner.link}
-                        </a>
-                      ) : (
-                        "-"
-                      )}
-                    </Box>
-                  </TableCell>
+
                   <TableCell align="right">
                     <IconButton
                       size="small"

@@ -20,7 +20,6 @@ export const CreateNoticePageV2 = () => {
       <Typography variant="h4" gutterBottom sx={{ mb: 3 }}>
         Crear Nueva Noticia
       </Typography>
-
       <CreateNoticeForm onSuccess={handleSuccess} onCancel={handleCancel} />
     </Box>
   );
