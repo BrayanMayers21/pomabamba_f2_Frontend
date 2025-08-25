@@ -1,4 +1,6 @@
+import React, { useState } from "react";
 import {
+  Paper,
   Table,
   TableBody,
   TableCell,
@@ -6,47 +8,48 @@ import {
   TableHead,
   TableRow,
   IconButton,
-  Paper,
-  TablePagination,
-  TextField,
-  Box,
-  InputAdornment,
-  Button,
+  Chip,
   Typography,
+  Box,
+  TextField,
+  InputAdornment,
+  TablePagination,
+  Button,
 } from "@mui/material";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
 import SearchIcon from "@mui/icons-material/Search";
-import type { Notice } from "../../../types/notice";
-import { useState } from "react";
+import { Edit as EditIcon, Delete as DeleteIcon } from "@mui/icons-material";
 
-interface Props {
-  notices: Notice[];
+import type { Alert } from "../../../types/alert";
+
+interface AlertTableProps {
+  alerts: Alert[];
   page: number;
   rowsPerPage: number;
   totalCount: number;
+  searchText: string;
   searchLoading?: boolean;
   onPageChange: (newPage: number) => void;
   onRowsPerPageChange: (newRows: number) => void;
-  onEdit: (notice: Notice) => void;
+  onEdit: (alert: Alert) => void;
   onDelete: (id: number) => void;
-  searchText: string;
+  onToggleStatus: (id: number, isActive: boolean) => void;
   onSearch: (text: string) => void;
 }
 
-export const NoticeTable = ({
-  notices,
+export function AlertTable({
+  alerts,
   page,
   rowsPerPage,
   totalCount,
+  searchText,
   searchLoading = false,
   onPageChange,
   onRowsPerPageChange,
   onEdit,
   onDelete,
-  searchText,
+  // onToggleStatus, // Se elimina si no se usa en la tabla
   onSearch,
-}: Props) => {
+}: AlertTableProps) {
   const [searchInput, setSearchInput] = useState("");
 
   const handleChangePage = (_: unknown, newPage: number) => {
@@ -74,22 +77,15 @@ export const NoticeTable = ({
     setSearchInput("");
     onSearch("");
   };
+  // Funciones getTypeColor y getPriorityColor eliminadas porque no se usan
 
-  const displayNotices = Array.isArray(notices) ? notices : [];
+  const safeAlerts = Array.isArray(alerts) ? alerts : [];
 
   return (
     <Box>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "flex-end",
-          mb: 2,
-          gap: 1,
-          flexWrap: "wrap",
-        }}
-      >
+      <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 2, gap: 1 }}>
         <TextField
-          label="Buscar noticia"
+          label="Buscar alerta"
           variant="outlined"
           size="small"
           value={searchInput}
@@ -127,7 +123,6 @@ export const NoticeTable = ({
         )}
       </Box>
 
-      {/* Mostrar información de la búsqueda actual */}
       {searchText && (
         <Box
           sx={{
@@ -149,37 +144,58 @@ export const NoticeTable = ({
 
       <Paper>
         <TableContainer>
-          <Table size="small">
+          <Table>
             <TableHead>
               <TableRow>
                 <TableCell>#</TableCell>
                 <TableCell>Título</TableCell>
-                <TableCell>Acciones</TableCell>
+                <TableCell>Tipo</TableCell>
+                <TableCell>Estado</TableCell>
+                <TableCell>Fecha creación</TableCell>
+                <TableCell align="right">Acciones</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {displayNotices.map((notice, index) => (
-                <TableRow key={notice.id}>
+              {safeAlerts.map((alert, index) => (
+                <TableRow key={alert.id}>
                   <TableCell>{page * rowsPerPage + index + 1}</TableCell>
+                  <TableCell>{alert.title}</TableCell>
+                  <TableCell>{alert.type}</TableCell>
                   <TableCell>
-                    <Box sx={{ maxWidth: 200 }}>{notice.title}</Box>
+                    <Chip
+                      label={alert.is_active ? "Activo" : "Inactivo"}
+                      color={alert.is_active ? "success" : "error"}
+                      size="small"
+                    />
+                  </TableCell>
+                  <TableCell>
+                    {alert.created_at
+                      ? new Date(alert.created_at).toLocaleString()
+                      : "-"}
                   </TableCell>
                   <TableCell align="right">
-                    <IconButton size="small" onClick={() => onEdit(notice)}>
-                      <EditIcon fontSize="small" />
+                    <IconButton
+                      size="small"
+                      color="primary"
+                      onClick={() => onEdit(alert)}
+                      aria-label="Editar alerta"
+                    >
+                      <EditIcon />
                     </IconButton>
                     <IconButton
                       size="small"
-                      onClick={() => onDelete(notice.id)}
+                      color="error"
+                      onClick={() => onDelete(alert.id)}
+                      aria-label="Eliminar alerta"
                     >
-                      <DeleteIcon fontSize="small" color="error" />
+                      <DeleteIcon />
                     </IconButton>
                   </TableCell>
                 </TableRow>
               ))}
-              {displayNotices.length === 0 && (
+              {safeAlerts.length === 0 && (
                 <TableRow>
-                  <TableCell colSpan={3} align="center">
+                  <TableCell colSpan={6} align="center">
                     No se encontraron resultados.
                   </TableCell>
                 </TableRow>
@@ -197,8 +213,11 @@ export const NoticeTable = ({
           onRowsPerPageChange={handleChangeRowsPerPage}
           rowsPerPageOptions={[5, 10, 25]}
           labelRowsPerPage="Filas por página"
+          labelDisplayedRows={({ from, to, count }) =>
+            `${from}-${to} de ${count !== -1 ? count : `más de ${to}`}`
+          }
         />
       </Paper>
     </Box>
   );
-};
+}

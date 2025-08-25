@@ -1,5 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { Mail, Phone, User, Building2, Calendar, Search, Filter, Users, ChevronDown, MapPin } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import {
+  Mail,
+  Phone,
+  User,
+  Building2,
+  Calendar,
+  Search,
+  Filter,
+  Users,
+  ChevronDown,
+  MapPin,
+} from "lucide-react";
 
 // Datos de ejemplo basados en el modelo Directory
 const mockDirectoryData = [
@@ -12,7 +23,7 @@ const mockDirectoryData = [
     email: "mrodriguez@ugelpomabamba.gob.pe",
     photo_url: null,
     status: "Active",
-    year: 2025
+    year: 2025,
   },
   {
     id: 2,
@@ -23,7 +34,7 @@ const mockDirectoryData = [
     email: "cmendoza@ugelpomabamba.gob.pe",
     photo_url: null,
     status: "Active",
-    year: 2025
+    year: 2025,
   },
   {
     id: 3,
@@ -34,7 +45,7 @@ const mockDirectoryData = [
     email: "ahuaman@ugelpomabamba.gob.pe",
     photo_url: null,
     status: "Active",
-    year: 2025
+    year: 2025,
   },
   {
     id: 4,
@@ -45,7 +56,7 @@ const mockDirectoryData = [
     email: "jparedes@ugelpomabamba.gob.pe",
     photo_url: null,
     status: "On Leave",
-    year: 2024
+    year: 2024,
   },
   {
     id: 5,
@@ -56,7 +67,7 @@ const mockDirectoryData = [
     email: "rflores@ugelpomabamba.gob.pe",
     photo_url: null,
     status: "Active",
-    year: 2025
+    year: 2025,
   },
   {
     id: 6,
@@ -67,15 +78,15 @@ const mockDirectoryData = [
     email: "pramirez@ugelpomabamba.gob.pe",
     photo_url: null,
     status: "Active",
-    year: 2025
-  }
+    year: 2025,
+  },
 ];
 
 const DirectoryPage = () => {
   const [selectedYear, setSelectedYear] = useState(2025);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedDepartment, setSelectedDepartment] = useState('Todos');
-  const [selectedStatus, setSelectedStatus] = useState('Todos');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedDepartment, setSelectedDepartment] = useState("Todos");
+  const [selectedStatus, setSelectedStatus] = useState("Todos");
   const [isLoading, setIsLoading] = useState(true);
   const [filteredData, setFilteredData] = useState([]);
 
@@ -90,56 +101,69 @@ const DirectoryPage = () => {
 
   // Filtrar datos
   useEffect(() => {
-    let filtered = mockDirectoryData.filter(person => {
+    let filtered = mockDirectoryData.filter((person) => {
       const matchesYear = person.year === selectedYear;
-      const matchesSearch = person.full_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           person.position.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           (person.department && person.department.toLowerCase().includes(searchTerm.toLowerCase()));
-      const matchesDepartment = selectedDepartment === 'Todos' || person.department === selectedDepartment;
-      const matchesStatus = selectedStatus === 'Todos' || person.status === selectedStatus;
-      
+      const matchesSearch =
+        person.full_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        person.position.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (person.department &&
+          person.department.toLowerCase().includes(searchTerm.toLowerCase()));
+      const matchesDepartment =
+        selectedDepartment === "Todos" ||
+        person.department === selectedDepartment;
+      const matchesStatus =
+        selectedStatus === "Todos" || person.status === selectedStatus;
+
       return matchesYear && matchesSearch && matchesDepartment && matchesStatus;
     });
     setFilteredData(filtered);
   }, [selectedYear, searchTerm, selectedDepartment, selectedStatus]);
 
   // Obtener años únicos
-  const availableYears = [...new Set(mockDirectoryData.map(person => person.year))].sort((a, b) => b - a);
-  
+  const availableYears = [
+    ...new Set(mockDirectoryData.map((person) => person.year)),
+  ].sort((a, b) => b - a);
+
   // Obtener departamentos únicos
-  const departments = [...new Set(mockDirectoryData.map(person => person.department).filter(Boolean))];
-  
+  const departments = [
+    ...new Set(
+      mockDirectoryData.map((person) => person.department).filter(Boolean)
+    ),
+  ];
+
   // Obtener estados únicos
-  const statuses = [...new Set(mockDirectoryData.map(person => person.status))];
+  const statuses = [
+    ...new Set(mockDirectoryData.map((person) => person.status)),
+  ];
 
   const getStatusColor = (status) => {
     switch (status) {
-      case 'Active':
-        return 'bg-green-100 text-green-800 border-green-200';
-      case 'Inactive':
-        return 'bg-gray-100 text-gray-800 border-gray-200';
-      case 'On Leave':
-        return 'bg-yellow-100 text-yellow-800 border-yellow-200';
+      case "Active":
+        return "bg-green-100 text-green-800 border-green-200";
+      case "Inactive":
+        return "bg-gray-100 text-gray-800 border-gray-200";
+      case "On Leave":
+        return "bg-yellow-100 text-yellow-800 border-yellow-200";
       default:
-        return 'bg-gray-100 text-gray-800 border-gray-200';
+        return "bg-gray-100 text-gray-800 border-gray-200";
     }
   };
 
   const getStatusText = (status) => {
     switch (status) {
-      case 'Active':
-        return 'Activo';
-      case 'Inactive':
-        return 'Inactivo';
-      case 'On Leave':
-        return 'Con Licencia';
+      case "Active":
+        return "Activo";
+      case "Inactive":
+        return "Inactivo";
+      case "On Leave":
+        return "Con Licencia";
       default:
         return status;
     }
   };
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 min-h-screen">
+    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 min-h-screen mt-20">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white py-16 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
@@ -152,7 +176,9 @@ const DirectoryPage = () => {
               <Users className="w-8 h-8 text-white" />
             </div>
             <div>
-              <h1 className="text-5xl font-bold tracking-tight">Directorio de Personal</h1>
+              <h1 className="text-5xl font-bold tracking-tight">
+                Directorio de Personal
+              </h1>
               <p className="text-xl text-white/90 mt-2">UGEL Pomabamba</p>
             </div>
           </div>
@@ -176,8 +202,10 @@ const DirectoryPage = () => {
                   onChange={(e) => setSelectedYear(parseInt(e.target.value))}
                   className="w-full p-3 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none cursor-pointer transition-all duration-200 hover:shadow-md"
                 >
-                  {availableYears.map(year => (
-                    <option key={year} value={year}>{year}</option>
+                  {availableYears.map((year) => (
+                    <option key={year} value={year}>
+                      {year}
+                    </option>
                   ))}
                 </select>
                 <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
@@ -215,8 +243,10 @@ const DirectoryPage = () => {
                   className="w-full p-3 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none cursor-pointer transition-all duration-200 hover:shadow-md"
                 >
                   <option value="Todos">Todos</option>
-                  {departments.map(dept => (
-                    <option key={dept} value={dept}>{dept}</option>
+                  {departments.map((dept) => (
+                    <option key={dept} value={dept}>
+                      {dept}
+                    </option>
                   ))}
                 </select>
                 <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
@@ -236,8 +266,10 @@ const DirectoryPage = () => {
                   className="w-full p-3 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none cursor-pointer transition-all duration-200 hover:shadow-md"
                 >
                   <option value="Todos">Todos</option>
-                  {statuses.map(status => (
-                    <option key={status} value={status}>{getStatusText(status)}</option>
+                  {statuses.map((status) => (
+                    <option key={status} value={status}>
+                      {getStatusText(status)}
+                    </option>
                   ))}
                 </select>
                 <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
@@ -248,8 +280,12 @@ const DirectoryPage = () => {
             <div className="flex items-end">
               <div className="bg-gradient-to-r from-blue-100 to-indigo-100 rounded-lg p-3 w-full">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-700">{filteredData.length}</div>
-                  <div className="text-sm text-blue-600">Personal encontrado</div>
+                  <div className="text-2xl font-bold text-blue-700">
+                    {filteredData.length}
+                  </div>
+                  <div className="text-sm text-blue-600">
+                    Personal encontrado
+                  </div>
                 </div>
               </div>
             </div>
@@ -260,7 +296,10 @@ const DirectoryPage = () => {
         {isLoading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-12">
             {[...Array(6)].map((_, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-xl p-6 animate-pulse">
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-xl p-6 animate-pulse"
+              >
                 <div className="flex items-center space-x-4 mb-4">
                   <div className="w-16 h-16 bg-gray-200 rounded-full"></div>
                   <div className="flex-1">
@@ -296,15 +335,23 @@ const DirectoryPage = () => {
                             className="w-full h-full rounded-full object-cover"
                           />
                         ) : (
-                          person.full_name.split(' ').map(n => n[0]).slice(0, 2).join('')
+                          person.full_name
+                            .split(" ")
+                            .map((n) => n[0])
+                            .slice(0, 2)
+                            .join("")
                         )}
                       </div>
                       <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-white rounded-full flex items-center justify-center">
-                        <div className={`w-3 h-3 rounded-full ${person.status === 'Active' ? 'bg-green-500' : person.status === 'On Leave' ? 'bg-yellow-500' : 'bg-gray-500'}`}></div>
+                        <div
+                          className={`w-3 h-3 rounded-full ${person.status === "Active" ? "bg-green-500" : person.status === "On Leave" ? "bg-yellow-500" : "bg-gray-500"}`}
+                        ></div>
                       </div>
                     </div>
                   </div>
-                  <div className={`px-3 py-1 rounded-full text-xs font-semibold border ${getStatusColor(person.status)}`}>
+                  <div
+                    className={`px-3 py-1 rounded-full text-xs font-semibold border ${getStatusColor(person.status)}`}
+                  >
                     {getStatusText(person.status)}
                   </div>
                 </div>
@@ -314,10 +361,12 @@ const DirectoryPage = () => {
                   <h3 className="text-lg font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-200">
                     {person.full_name}
                   </h3>
-                  
+
                   <div className="flex items-center text-gray-600 group-hover:text-gray-800 transition-colors duration-200">
                     <User className="w-4 h-4 mr-2 text-blue-500 flex-shrink-0" />
-                    <span className="text-sm font-medium">{person.position}</span>
+                    <span className="text-sm font-medium">
+                      {person.position}
+                    </span>
                   </div>
 
                   {person.department && (
@@ -383,35 +432,54 @@ const DirectoryPage = () => {
             <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <Users className="w-12 h-12 text-gray-400" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-600 mb-2">No se encontró personal</h3>
-            <p className="text-gray-500">No hay personal que coincida con los filtros seleccionados para el año {selectedYear}.</p>
+            <h3 className="text-xl font-semibold text-gray-600 mb-2">
+              No se encontró personal
+            </h3>
+            <p className="text-gray-500">
+              No hay personal que coincida con los filtros seleccionados para el
+              año {selectedYear}.
+            </p>
           </div>
         )}
 
         {/* Footer con estadísticas */}
         <div className="bg-white rounded-2xl shadow-xl shadow-blue-100/50 p-8 border border-blue-100/20 backdrop-blur-sm mb-8">
-          <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">Estadísticas del Personal - {selectedYear}</h3>
+          <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+            Estadísticas del Personal - {selectedYear}
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-100">
               <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3">
                 <Users className="w-6 h-6 text-white" />
               </div>
               <div className="text-3xl font-bold text-green-700">
-                {mockDirectoryData.filter(p => p.year === selectedYear && p.status === 'Active').length}
+                {
+                  mockDirectoryData.filter(
+                    (p) => p.year === selectedYear && p.status === "Active"
+                  ).length
+                }
               </div>
-              <div className="text-sm text-green-600 font-medium">Personal Activo</div>
+              <div className="text-sm text-green-600 font-medium">
+                Personal Activo
+              </div>
             </div>
-            
+
             <div className="text-center p-6 bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl border border-yellow-100">
               <div className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-3">
                 <Calendar className="w-6 h-6 text-white" />
               </div>
               <div className="text-3xl font-bold text-yellow-700">
-                {mockDirectoryData.filter(p => p.year === selectedYear && p.status === 'On Leave').length}
+                {
+                  mockDirectoryData.filter(
+                    (p) => p.year === selectedYear && p.status === "On Leave"
+                  ).length
+                }
               </div>
-              <div className="text-sm text-yellow-600 font-medium">Con Licencia</div>
+              <div className="text-sm text-yellow-600 font-medium">
+                Con Licencia
+              </div>
             </div>
-            
+
             <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
               <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
                 <Building2 className="w-6 h-6 text-white" />
@@ -419,7 +487,9 @@ const DirectoryPage = () => {
               <div className="text-3xl font-bold text-blue-700">
                 {departments.length}
               </div>
-              <div className="text-sm text-blue-600 font-medium">Departamentos</div>
+              <div className="text-sm text-blue-600 font-medium">
+                Departamentos
+              </div>
             </div>
           </div>
         </div>
@@ -439,7 +509,7 @@ const DirectoryPage = () => {
             transform: translateY(0);
           }
         }
-        
+
         @keyframes slideIn {
           from {
             width: 0;
@@ -448,7 +518,7 @@ const DirectoryPage = () => {
             width: 8rem;
           }
         }
-        
+
         @keyframes slideUp {
           from {
             opacity: 0;
@@ -459,15 +529,15 @@ const DirectoryPage = () => {
             transform: translateY(0);
           }
         }
-        
+
         .animate-fadeIn {
           animation: fadeIn 0.8s ease-out;
         }
-        
+
         .animate-slideIn {
           animation: slideIn 1.2s ease-out 0.5s both;
         }
-        
+
         .animate-slideUp {
           animation: slideUp 0.6s ease-out;
         }

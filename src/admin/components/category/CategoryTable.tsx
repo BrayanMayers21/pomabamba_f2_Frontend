@@ -1,4 +1,12 @@
+import React, { useState } from "react";
 import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+} from "@mui/material";
+import {
+  Paper,
   Table,
   TableBody,
   TableCell,
@@ -6,48 +14,44 @@ import {
   TableHead,
   TableRow,
   IconButton,
-  Paper,
-  TablePagination,
-  TextField,
-  Box,
-  InputAdornment,
-  Button,
   Typography,
+  Box,
+  TablePagination,
+  Button,
+  TextField,
+  InputAdornment,
 } from "@mui/material";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
 import SearchIcon from "@mui/icons-material/Search";
-import type { Notice } from "../../../types/notice";
-import { useState } from "react";
+import { Edit as EditIcon, Delete as DeleteIcon } from "@mui/icons-material";
 
-interface Props {
-  notices: Notice[];
+interface CategoryTableProps {
+  categories: any[];
   page: number;
   rowsPerPage: number;
   totalCount: number;
-  searchLoading?: boolean;
   onPageChange: (newPage: number) => void;
   onRowsPerPageChange: (newRows: number) => void;
-  onEdit: (notice: Notice) => void;
+  onEdit: (category: any) => void;
   onDelete: (id: number) => void;
-  searchText: string;
-  onSearch: (text: string) => void;
+  searchText?: string;
+  onSearch?: (text: string) => void;
 }
 
-export const NoticeTable = ({
-  notices,
+export function CategoryTable({
+  categories,
   page,
   rowsPerPage,
   totalCount,
-  searchLoading = false,
   onPageChange,
   onRowsPerPageChange,
   onEdit,
   onDelete,
-  searchText,
+  searchText = "",
   onSearch,
-}: Props) => {
+}: CategoryTableProps) {
   const [searchInput, setSearchInput] = useState("");
+  const [confirmOpen, setConfirmOpen] = useState(false);
+  const [deleteId, setDeleteId] = useState<number | null>(null);
 
   const handleChangePage = (_: unknown, newPage: number) => {
     onPageChange(newPage);
@@ -61,42 +65,46 @@ export const NoticeTable = ({
   };
 
   const handleSearchClick = () => {
-    onSearch(searchInput);
+    if (onSearch) onSearch(searchInput);
+  };
+
+  const handleDeleteClick = (id: number) => {
+    setDeleteId(id);
+    setConfirmOpen(true);
+  };
+
+  const handleConfirmDelete = () => {
+    if (deleteId !== null) {
+      onDelete(deleteId);
+    }
+    setConfirmOpen(false);
+    setDeleteId(null);
   };
 
   const handleSearchKeyPress = (event: React.KeyboardEvent) => {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && onSearch) {
       handleSearchClick();
     }
   };
 
   const handleClearSearch = () => {
     setSearchInput("");
-    onSearch("");
+    if (onSearch) onSearch("");
   };
 
-  const displayNotices = Array.isArray(notices) ? notices : [];
+  const safeCategories = Array.isArray(categories) ? categories : [];
 
   return (
     <Box>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "flex-end",
-          mb: 2,
-          gap: 1,
-          flexWrap: "wrap",
-        }}
-      >
+      <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 2, gap: 1 }}>
         <TextField
-          label="Buscar noticia"
+          label="Buscar categoría"
           variant="outlined"
           size="small"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
           onKeyPress={handleSearchKeyPress}
           autoComplete="off"
-          disabled={searchLoading}
           sx={{ width: { xs: "100%", sm: "300px" } }}
           InputProps={{
             startAdornment: (
@@ -109,16 +117,14 @@ export const NoticeTable = ({
         <Button
           variant="contained"
           onClick={handleSearchClick}
-          disabled={searchLoading}
           sx={{ minWidth: "auto", px: 2 }}
         >
-          {searchLoading ? "Buscando..." : "Buscar"}
+          Buscar
         </Button>
         {searchText && (
           <Button
             variant="outlined"
             onClick={handleClearSearch}
-            disabled={searchLoading}
             sx={{ minWidth: "auto", px: 2 }}
             color="secondary"
           >
@@ -127,7 +133,6 @@ export const NoticeTable = ({
         )}
       </Box>
 
-      {/* Mostrar información de la búsqueda actual */}
       {searchText && (
         <Box
           sx={{
@@ -149,37 +154,46 @@ export const NoticeTable = ({
 
       <Paper>
         <TableContainer>
-          <Table size="small">
+          <Table>
             <TableHead>
               <TableRow>
                 <TableCell>#</TableCell>
-                <TableCell>Título</TableCell>
-                <TableCell>Acciones</TableCell>
+                <TableCell>Nombre</TableCell>
+                <TableCell>Descripción</TableCell>
+                <TableCell align="right">Acciones</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {displayNotices.map((notice, index) => (
-                <TableRow key={notice.id}>
+              {safeCategories.map((cat, index) => (
+                <TableRow key={cat.id}>
                   <TableCell>{page * rowsPerPage + index + 1}</TableCell>
                   <TableCell>
-                    <Box sx={{ maxWidth: 200 }}>{notice.title}</Box>
+                    {cat.name || cat.title || `Categoría ${cat.id}`}
                   </TableCell>
+                  <TableCell>{cat.description || ""}</TableCell>
                   <TableCell align="right">
-                    <IconButton size="small" onClick={() => onEdit(notice)}>
-                      <EditIcon fontSize="small" />
+                    <IconButton
+                      size="small"
+                      color="primary"
+                      onClick={() => onEdit(cat)}
+                      aria-label="Editar categoría"
+                    >
+                      <EditIcon />
                     </IconButton>
                     <IconButton
                       size="small"
-                      onClick={() => onDelete(notice.id)}
+                      color="error"
+                      onClick={() => handleDeleteClick(cat.id)}
+                      aria-label="Eliminar categoría"
                     >
-                      <DeleteIcon fontSize="small" color="error" />
+                      <DeleteIcon />
                     </IconButton>
                   </TableCell>
                 </TableRow>
               ))}
-              {displayNotices.length === 0 && (
+              {safeCategories.length === 0 && (
                 <TableRow>
-                  <TableCell colSpan={3} align="center">
+                  <TableCell colSpan={4} align="center">
                     No se encontraron resultados.
                   </TableCell>
                 </TableRow>
@@ -197,8 +211,32 @@ export const NoticeTable = ({
           onRowsPerPageChange={handleChangeRowsPerPage}
           rowsPerPageOptions={[5, 10, 25]}
           labelRowsPerPage="Filas por página"
+          labelDisplayedRows={({ from, to, count }) =>
+            `${from}-${to} de ${count !== -1 ? count : `más de ${to}`}`
+          }
         />
       </Paper>
+      {/* Modal de confirmación de eliminación */}
+      <Dialog open={confirmOpen} onClose={() => setConfirmOpen(false)}>
+        <DialogTitle>
+          ¿Está seguro que desea eliminar esta categoría?
+        </DialogTitle>
+        <DialogContent>
+          <Typography>Esta acción no se puede deshacer.</Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setConfirmOpen(false)} variant="outlined">
+            Cancelar
+          </Button>
+          <Button
+            onClick={handleConfirmDelete}
+            color="error"
+            variant="contained"
+          >
+            Eliminar
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
-};
+}
