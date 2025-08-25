@@ -54,7 +54,7 @@ const menu: MenuItem[] = [
         href: "https://servicios-ayni.minedu.gob.pe/ayni/inicio",
       },
       { label: "Manuales G-Suite", href: "/manuales-g-suite" },
-      { label: "Libro de reclamaciones", href: "#" },
+      { label: "Libro de reclamaciones", href: "/reclamos" },
     ],
   },
   {
